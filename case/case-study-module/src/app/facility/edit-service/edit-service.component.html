@@ -1,0 +1,220 @@
+<div class="container">
+  <form class="well form-horizontal" [formGroup]="facilityForm"
+        (ngSubmit)="updateFacility()" novalidate>
+    <fieldset>
+
+      <legend>Contact Us Today!</legend>
+      <div class="form-group">
+        <label class="col-md-4 control-label">Service Name</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="phone" placeholder="Service Name " class="form-control" formControlName="serviceName"
+                   type="text">
+          </div>
+          <div style="color: #ff0200">
+            <p *ngIf="facilityForm.controls.serviceName.hasError('required') &&
+            facilityForm.controls.serviceName.touched"> it's Empty!! </p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label">Service Code</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="phone" placeholder="Service Code " class="form-control" formControlName="serviceCode"
+                   type="text">
+          </div>
+          <div style="color: #ff0200">
+            <p *ngIf="facilityForm.controls.serviceCode.hasError('required') &&
+            facilityForm.controls.serviceCode.touched"> it's Empty!! </p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label">Image </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="phone" placeholder="Image " class="form-control" formControlName="serviceImage"
+                   type="url">
+          </div>
+          <div style="color: #ff0200">
+            <p *ngIf="facilityForm.controls.serviceImage.hasError('required') &&
+            facilityForm.controls.serviceImage.touched"> it's Empty!! </p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label"> Rent Type</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <select name="" formControlName="rentType" id="selsect" class="form-control"
+                    [compareWith]="checkItemRent">
+              <option  *ngFor="let i of rentTypeList" [ngValue]="i"> {{i.name}}</option>
+            </select>
+          </div>
+          <div style="color: #ff0200">
+            <p *ngIf="facilityForm.controls.rentType.hasError('required') &&
+            facilityForm.controls.rentType.touched"> it's Empty!! </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Price </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <input name="website" placeholder="Price" class="form-control" formControlName="serviceCost"
+                   type="text">
+            <div style="color: #ff0200">
+              <p *ngIf="facilityForm.controls.serviceCost.hasError('price0')  "> The price can't be less than zero!! </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Rental Type</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <input name="website" placeholder="Rental Type "
+                   class="form-control" formControlName="serviceTypeId"
+                   type="text">
+          </div>
+        </div>
+        <div
+          *ngIf="!facilityForm.controls.serviceTypeId?.valid && (facilityForm.controls.serviceTypeId?.dirty
+              ||facilityForm.controls.serviceTypeId?.touched)" style="color: red">
+          Service Type is not Null!!
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label"> Service</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <select name="" id="select" class="form-control">
+              <option value="">--- Service ---</option>
+              <option> Villa</option>
+              <option> Room</option>
+              <option> House</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group" id="mienPhi">
+        <label class="col-md-4 control-label">free service</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <input name="website" placeholder="free service" class="form-control"
+                   formControlName="freeAttachedService"
+                   type="text">
+          </div>
+          <div
+            *ngIf="!facilityForm.controls.freeAttachedService?.valid && (facilityForm.controls.freeAttachedService?.dirty
+              ||facilityForm.controls.freeAttachedService?.touched)" style="color: red">
+            free Attached Service is not Null!!
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group" id="moTa">
+        <label class="col-md-4 control-label"> Description of Other Amenities</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="first_name"
+                   placeholder="Description of Other Amenities" class="form-control"
+                   formControlName="descriptionOtherConvenience" type="text">
+          </div>
+          <div
+            *ngIf="!facilityForm.controls.descriptionOtherConvenience?.valid && (facilityForm.controls.descriptionOtherConvenience?.dirty
+              ||facilityForm.controls.descriptionOtherConvenience?.touched)" style="color: red">
+            description Other Convenience Service is not Null!!
+          </div>
+        </div>
+      </div>
+      <div class="form-group" id="soTang">
+        <label class="col-md-4 control-label">Number of Floors</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="last_name" placeholder="Number of Floors "
+                   class="form-control" formControlName="numberOfFloors" type="text">
+          </div>
+          <div
+            *ngIf="!facilityForm.controls.numberOfFloors?.valid && (facilityForm.controls.numberOfFloors?.dirty
+              ||facilityForm.controls.numberOfFloors?.touched)" style="color: red">
+            number Of FloorsService is not Null!!
+          </div>
+        </div>
+      </div>
+      <div class="form-group" id="tieuChuan">
+        <label class="col-md-4 control-label">Standard proom </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input name="address" placeholder="Standard proom"
+                   class="form-control" formControlName="standardRoom" type="text">
+          </div>
+          <div
+            *ngIf="!facilityForm.controls.standardRoom?.valid && (facilityForm.controls.standardRoom?.dirty
+              ||facilityForm.controls.standardRoom?.touched)" style="color: red">
+            standard Room Service is not Null!!
+          </div>
+        </div>
+      </div>
+      <div class="form-group" id="hoBoi">
+        <label class="col-md-4 control-label">Swimming Pool Area</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input name="email" placeholder="Swimming Pool Area " class="form-control"
+                   formControlName="poolArea"
+                   type="text">
+          </div>
+          <div
+            *ngIf="!facilityForm.controls.poolArea?.valid && (facilityForm.controls.poolArea?.dirty
+              ||facilityForm.controls.poolArea?.touched)" style="color: red">
+            pool Area Service is not Null!!
+          </div>
+        </div>
+      </div>
+      <div class="form-group" id="nguoi">
+        <label class="col-md-4 control-label">Number of dark people </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input name="email" placeholder="Number of dark people " class="form-control"
+                   formControlName="serviceMaxPeople"
+                   type="text">
+          </div>
+          <div
+            *ngIf="!facilityForm.controls.serviceMaxPeople?.valid && (facilityForm.controls.serviceMaxPeople?.dirty
+              ||facilityForm.controls.serviceMaxPeople?.touched)" style="color: red">
+            service Max People is not Null!!
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-warning">Send <span
+              class="glyphicon glyphicon-send"  ></span></button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

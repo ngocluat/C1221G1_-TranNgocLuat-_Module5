@@ -1,0 +1,311 @@
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 1,
+      "name": "Diamond"
+    }
+  ],
+  "customer": [
+    {
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 1,
+      "customerCode": "KH-9827",
+      "customerName": "Leee DA",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": 0,
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 3,
+      "customerCode": "KH-9827",
+      "customerName": "Lê Văn Hi",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": 0,
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 4,
+      "customerCode": "KH-9827",
+      "customerName": " Trần Ngọc Luật",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": 1,
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 6,
+      "customerCode": "KH-9827",
+      "customerName": " Trần Ngọc Luật",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": 0,
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 7,
+      "customerCode": "KH-9827",
+      "customerName": "What",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": 1,
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 8,
+      "customerCode": "KH-9827",
+      "customerName": " Trần Ngọc Luật",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": 1,
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 9,
+      "customerCode": "KH-9866",
+      "customerName": "TRần Ngọc Luật",
+      "customerBirthDay": "2022-06-03",
+      "customerGender": "0",
+      "customerCMDD": 134641464,
+      "customerPhone": "5141411444",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 10,
+      "customerCode": "KH-9866",
+      "customerName": "Lê Thị Linh ",
+      "customerBirthDay": "2022-06-30",
+      "customerGender": "0",
+      "customerCMDD": 431684351,
+      "customerPhone": "5285484444",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 11,
+      "customerCode": "KH-9866",
+      "customerName": "Lê Thị Linh ",
+      "customerBirthDay": "2022-06-24",
+      "customerGender": "0",
+      "customerCMDD": 134646516,
+      "customerPhone": "3498414984",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 12,
+      "customerCode": "KH-8736",
+      "customerName": "Lê Văn Nin",
+      "customerBirthDay": "2022-06-19",
+      "customerGender": "0",
+      "customerCMDD": 836873676,
+      "customerPhone": "3857652465",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "year"
+    },
+    {
+      "id": 2,
+      "name": "month"
+    },
+    {
+      "id": 3,
+      "name": "day"
+    },
+    {
+      "id": 4,
+      "name": "hour"
+    }
+  ],
+  "facility": [
+    {
+      "serviceId": 1,
+      "serviceCode": "DV-0001",
+      "serviceName": "Villa Beach Front",
+      "serviceImage": "https://freelancervietnam.vn/wp-content/uploads/2020/07/post-thumb-nhiep-anh.jpg",
+      "serviceArea": 25000,
+      "serviceCost": 10000000,
+      "serviceMaxPeople": 10,
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": 500,
+      "numberOfFloors": 4,
+      "freeAttachedService": "900000",
+      "rentType": {
+        "id": 1,
+        "name": "year"
+      },
+      "serviceTypeId": 1,
+      "active": 1,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "serviceCode": "DV-0002",
+      "serviceName": "House Princess 01",
+      "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+      "serviceArea": 14000,
+      "serviceCost": 5000000,
+      "serviceMaxPeople": 7,
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "Có thêm bếp nướng",
+      "poolArea": 0,
+      "numberOfFloors": 3,
+      "freeAttachedService": "",
+      "rentType": {
+        "id": 2,
+        "name": "month"
+      },
+      "serviceTypeId": 2,
+      "active": 1
+    },
+    {
+      "id": 3,
+      "serviceCode": "DV-0003",
+      "serviceName": "Room Twin 01",
+      "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+      "serviceArea": 5000,
+      "serviceCost": 1000000,
+      "serviceMaxPeople": 2,
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có tivi",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "freeAttachedService": "",
+      "rentType": {
+        "id": 4,
+        "name": "hour"
+      },
+      "serviceTypeId": 3,
+      "active": 1
+    },
+    {
+      "id": 4,
+      "serviceCode": "DV-0004",
+      "serviceName": "Villa No Beach Front",
+      "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+      "serviceArea": 22000,
+      "serviceCost": 9000000,
+      "serviceMaxPeople": 8,
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": 300,
+      "numberOfFloors": 3,
+      "freeAttachedService": "",
+      "rentType": {
+        "id": 3,
+        "name": "day"
+      },
+      "serviceTypeId": 1,
+      "active": 1
+    },
+    {
+      "id": 6,
+      "serviceCode": "DV-0006",
+      "serviceName": "Room Twin 02",
+      "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+      "serviceArea": 3000,
+      "serviceCost": 900000,
+      "serviceMaxPeople": 2,
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có tivi",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "freeAttachedService": "",
+      "rentType": {
+        "id": 4,
+        "name": "hour"
+      },
+      "serviceTypeId": 3,
+      "active": 1
+    },
+    {
+      "serviceId": "",
+      "serviceCode": "DV-5365",
+      "serviceName": "Villa Ngịc Luật",
+      "serviceImage": "https://cdn.sforum.vn/sforum/wp-content/uploads/2018/11/3-8.png",
+      "serviceArea": "",
+      "serviceCost": "11",
+      "serviceMaxPeople": "300",
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có thêm bếp nướng",
+      "poolArea": "300",
+      "numberOfFloors": "3",
+      "freeAttachedService": "900000",
+      "rentType": "",
+      "serviceTypeId": "90000",
+      "active": "",
+      "id": 7
+    }
+  ],

@@ -1,0 +1,798 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    }
+  ],
+  "customer": [
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 1,
+      "customerCode": "KH-9827",
+      "customerName": "Leee DA",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": "0",
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "id": 3,
+      "customerCode": "KH-9827",
+      "customerName": "Lê Văn Hi",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": "0",
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 4,
+      "customerCode": "KH-9827",
+      "customerName": " Trần Ngọc Luật",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": "1",
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 6,
+      "customerCode": "KH-9827",
+      "customerName": "Lee Taan Thij Lys",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": "0",
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 8,
+      "customerCode": "KH-9827",
+      "customerName": " Trần Ngọc Luật",
+      "customerBirthDay": "2003-02-02",
+      "customerGender": "1",
+      "customerCMDD": 979878937,
+      "customerPhone": "0739878736783",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 10,
+      "customerCode": "KH-9866",
+      "customerName": "Lê Thị Linh ",
+      "customerBirthDay": "2022-06-30",
+      "customerGender": "1",
+      "customerCMDD": 431684351,
+      "customerPhone": "5285484444",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 11,
+      "customerCode": "KH-9866",
+      "customerName": "Lê Thị Linh ",
+      "customerBirthDay": "2022-06-24",
+      "customerGender": "0",
+      "customerCMDD": 134646516,
+      "customerPhone": "3498414984",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 12,
+      "customerCode": "KH-8736",
+      "customerName": "Lê Văn Ninh",
+      "customerBirthDay": "2022-06-19",
+      "customerGender": "0",
+      "customerCMDD": 836873676,
+      "customerPhone": "3857652465",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 13,
+      "customerCode": "KH-9827",
+      "customerName": "Trần Ngọc Luật",
+      "customerBirthDay": "2022-06-16",
+      "customerGender": "1",
+      "customerCMDD": 363876733,
+      "customerPhone": "3857652465",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 14,
+      "customerCode": "KH-9866",
+      "customerName": "Búi Sùi Nhùi Đầu ",
+      "customerBirthDay": "2005-06-16",
+      "customerGender": "0",
+      "customerCMDD": 286736633,
+      "customerPhone": "3857652465",
+      "customerEmail": "QuoocTinBoiGiaGai@gmail.com",
+      "customerAddress": "Chuồn GÀ ",
+      "flag": 1
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 15,
+      "customerCode": "KH-9866",
+      "customerName": "Trần Ngọc Luật",
+      "customerBirthDay": "2022-06-23",
+      "customerGender": "0",
+      "customerCMDD": 268678622,
+      "customerPhone": "6387783291",
+      "customerEmail": "luatngoc92@gmail.com",
+      "customerAddress": "Đà Nẵng",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 16,
+      "customerCode": "KH-98123",
+      "customerName": "Phạm Việt Khoa",
+      "customerBirthDay": "2022-06-03",
+      "customerGender": "1",
+      "customerCMDD": 208797387,
+      "customerPhone": "8739720822",
+      "customerEmail": "khoapham@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 17,
+      "customerCode": "KH-982333",
+      "customerName": "Phan An Ngựa",
+      "customerBirthDay": "2022-06-05",
+      "customerGender": "1",
+      "customerCMDD": 829933333,
+      "customerPhone": "2222222343",
+      "customerEmail": "anphan@GMAIL.COM",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "id": 18,
+      "customerCode": "KH-9111",
+      "customerName": "Lê Văn Hi Khoa",
+      "customerBirthDay": "2022-06-01",
+      "customerGender": "1",
+      "customerCMDD": 123123333,
+      "customerPhone": "3857652465",
+      "customerEmail": "LUAT@GMAIL.COM",
+      "customerAddress": "Núi Thành , Quảng Nam",
+      "flag": null
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 19,
+      "customerCode": "KH-9866",
+      "customerName": "Lê Văn Hý ",
+      "customerBirthDay": "2022-06-26",
+      "customerGender": "1",
+      "customerCMDD": 726157658,
+      "customerPhone": "3857652465",
+      "customerEmail": "TranLuat@gmail.com",
+      "customerAddress": "Núi Thành Quảng Nam ",
+      "flag": null
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "year"
+    },
+    {
+      "id": 2,
+      "name": "month"
+    },
+    {
+      "id": 3,
+      "name": "day"
+    },
+    {
+      "id": 4,
+      "name": "hour"
+    }
+  ],
+  "facility": [
+    {
+      "serviceId": 1,
+      "serviceCode": "DV-0001",
+      "serviceName": "Villa Beach Front",
+      "serviceImage": "https://freelancervietnam.vn/wp-content/uploads/2020/07/post-thumb-nhiep-anh.jpg",
+      "serviceArea": 25000,
+      "serviceCost": 10000000,
+      "serviceMaxPeople": 10,
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": 500,
+      "numberOfFloors": 4,
+      "freeAttachedService": "900000",
+      "rentType": {
+        "id": 1,
+        "name": "year"
+      },
+      "serviceTypeId": 1,
+      "active": 1,
+      "id": 1
+    },
+    {
+      "serviceId": 2,
+      "serviceCode": "DV-0002",
+      "serviceName": "House Princess 01",
+      "serviceImage": "https://mmlive.one/wp-content/uploads/2022/03/MMlive-tong-hop-anh-gai-xinh-1.webp",
+      "serviceArea": 14000,
+      "serviceCost": 5000000,
+      "serviceMaxPeople": 7,
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "Có thêm bếp nướng",
+      "poolArea": 0,
+      "numberOfFloors": 3,
+      "freeAttachedService": "",
+      "rentType": {
+        "id": 2,
+        "name": "month"
+      },
+      "serviceTypeId": 2,
+      "active": 1,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "serviceCode": "DV-0003",
+      "serviceName": "Room Twin 01",
+      "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+      "serviceArea": 5000,
+      "serviceCost": 1000000,
+      "serviceMaxPeople": 2,
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có tivi",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "freeAttachedService": "",
+      "rentType": {
+        "id": 4,
+        "name": "hour"
+      },
+      "serviceTypeId": 3,
+      "active": 1
+    },
+    {
+      "id": 4,
+      "serviceCode": "DV-0004",
+      "serviceName": "Villa No Beach Front",
+      "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+      "serviceArea": 22000,
+      "serviceCost": 9000000,
+      "serviceMaxPeople": 8,
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": 300,
+      "numberOfFloors": 3,
+      "freeAttachedService": "",
+      "rentType": {
+        "id": 3,
+        "name": "day"
+      },
+      "serviceTypeId": 1,
+      "active": 1
+    },
+    {
+      "id": 6,
+      "serviceCode": "DV-0006",
+      "serviceName": "Room Twin 02",
+      "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+      "serviceArea": 3000,
+      "serviceCost": 900000,
+      "serviceMaxPeople": 2,
+      "standardRoom": "normal",
+      "descriptionOtherConvenience": "Có tivi",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "freeAttachedService": "",
+      "rentType": {
+        "id": 4,
+        "name": "hour"
+      },
+      "serviceTypeId": 3,
+      "active": 1
+    },
+    {
+      "serviceId": 7,
+      "serviceCode": "DV-5365",
+      "serviceName": "Villa Ngịc Luật",
+      "serviceImage": "https://cdn.sforum.vn/sforum/wp-content/uploads/2018/11/3-8.png",
+      "serviceArea": "",
+      "serviceCost": "11",
+      "serviceMaxPeople": "300",
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có thêm bếp nướng",
+      "poolArea": "300",
+      "numberOfFloors": "3",
+      "freeAttachedService": "900000",
+      "rentType": {
+        "id": 3,
+        "name": "Day"
+      },
+      "serviceTypeId": "90000",
+      "active": "",
+      "id": 7
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "contractStartDate": "2021-01-14",
+      "contractEndDate": "2021-01-18",
+      "contractDeposit": 100000,
+      "contractTotalMoney": 1400000,
+      "idEmployee": {
+        "employeeId": 7,
+        "employeeName": "Nguyễn Hữu Hà",
+        "employeeBirthday": "1993-01-01",
+        "employeeIdCard": "534323231",
+        "employeeSalary": 8000000,
+        "employeePhone": "0941234553",
+        "employeeEmail": "nhh0101@gmail.com",
+        "employeeAddress": "4 Nguyễn Chí Thanh, Huế",
+        "positionId": 2,
+        "educationDegreeId": 3,
+        "divisionId": 2
+      },
+      "idCustomer": {
+        "id": 5,
+        "customerCode": "KH-0005",
+        "customerName": "Hoàng Trần Nhi Nhi",
+        "customerBirthDay": "1995-12-09",
+        "customerGender": "1",
+        "customerCMDD": "795453345",
+        "customerPhone": "0312345678",
+        "customerEmail": "nhinhi123@gmail.com",
+        "customerAddress": "224 Lý Thái Tổ, Gia Lai",
+        "customerType": {
+          "id": 1,
+          "name": "Diamond"
+        },
+        "flag": 1
+      },
+      "idService": {
+        "serviceId": 5,
+        "serviceCode": "DV-0005",
+        "serviceName": "House Princess 02",
+        "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+        "serviceArea": 10000,
+        "serviceCost": 4000000,
+        "serviceMaxPeople": 5,
+        "standardRoom": "normal",
+        "descriptionOtherConvenience": "Có thêm bếp nướng",
+        "poolArea": 0,
+        "numberOfFloors": 2,
+        "freeAttachedService": "",
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        },
+        "serviceTypeId": 2,
+        "active": 1
+      }
+    },
+    {
+      "id": 2,
+      "contractStartDate": "2021-01-14",
+      "contractEndDate": "2021-01-18",
+      "contractDeposit": 100000,
+      "contractTotalMoney": 1400000,
+      "idEmployee": {
+        "employeeId": 7,
+        "employeeName": "Nguyễn Hữu Hà",
+        "employeeBirthday": "1993-01-01",
+        "employeeIdCard": "534323231",
+        "employeeSalary": 8000000,
+        "employeePhone": "0941234553",
+        "employeeEmail": "nhh0101@gmail.com",
+        "employeeAddress": "4 Nguyễn Chí Thanh, Huế",
+        "positionId": 2,
+        "educationDegreeId": 3,
+        "divisionId": 2
+      },
+      "idCustomer": {
+        "id": 5,
+        "customerCode": "KH-0005",
+        "customerName": "Hoàng Trần Nhi Nhi",
+        "customerBirthDay": "1995-12-09",
+        "customerGender": "1",
+        "customerCMDD": "795453345",
+        "customerPhone": "0312345678",
+        "customerEmail": "nhinhi123@gmail.com",
+        "customerAddress": "224 Lý Thái Tổ, Gia Lai",
+        "customerType": {
+          "id": 1,
+          "name": "Diamond"
+        },
+        "flag": 1
+      },
+      "idService": {
+        "serviceId": 5,
+        "serviceCode": "DV-0005",
+        "serviceName": "House Princess 02",
+        "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+        "serviceArea": 10000,
+        "serviceCost": 4000000,
+        "serviceMaxPeople": 5,
+        "standardRoom": "normal",
+        "descriptionOtherConvenience": "Có thêm bếp nướng",
+        "poolArea": 0,
+        "numberOfFloors": 2,
+        "freeAttachedService": "",
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        },
+        "serviceTypeId": 2,
+        "active": 1
+      }
+    },
+    {
+      "id": 3,
+      "contractStartDate": "2021-01-14",
+      "contractEndDate": "2021-01-18",
+      "contractDeposit": 100000,
+      "contractTotalMoney": 1400000,
+      "idEmployee": {
+        "employeeId": 7,
+        "employeeName": "Nguyễn Hữu Hà",
+        "employeeBirthday": "1993-01-01",
+        "employeeIdCard": "534323231",
+        "employeeSalary": 8000000,
+        "employeePhone": "0941234553",
+        "employeeEmail": "nhh0101@gmail.com",
+        "employeeAddress": "4 Nguyễn Chí Thanh, Huế",
+        "positionId": 2,
+        "educationDegreeId": 3,
+        "divisionId": 2
+      },
+      "idCustomer": {
+        "id": 5,
+        "customerCode": "KH-0005",
+        "customerName": "Hoàng Trần Nhi Nhi",
+        "customerBirthDay": "1995-12-09",
+        "customerGender": "1",
+        "customerCMDD": "795453345",
+        "customerPhone": "0312345678",
+        "customerEmail": "nhinhi123@gmail.com",
+        "customerAddress": "224 Lý Thái Tổ, Gia Lai",
+        "customerType": {
+          "id": 1,
+          "name": "Diamond"
+        },
+        "flag": 1
+      },
+      "idService": {
+        "serviceId": 5,
+        "serviceCode": "DV-0005",
+        "serviceName": "House Princess 02",
+        "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+        "serviceArea": 10000,
+        "serviceCost": 4000000,
+        "serviceMaxPeople": 5,
+        "standardRoom": "normal",
+        "descriptionOtherConvenience": "Có thêm bếp nướng",
+        "poolArea": 0,
+        "numberOfFloors": 2,
+        "freeAttachedService": "",
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        },
+        "serviceTypeId": 2,
+        "active": 1
+      }
+    },
+    {
+      "idEmployee": {
+        "employeeId": 2,
+        "employeeName": "Lê Văn Bình",
+        "employeeBirthday": "1997-04-09",
+        "employeeIdCard": "654231234",
+        "employeeSalary": 7000000,
+        "employeePhone": "0934212314",
+        "employeeEmail": "binhlv@gmail.com",
+        "employeeAddress": "22 Yên Bái, Đà Nẵng",
+        "positionId": 1,
+        "educationDegreeId": 2,
+        "divisionId": 2
+      },
+      "idCustomer": "",
+      "idService": "",
+      "contractStartDate": "2022-06-04",
+      "contractEndDate": "2022-06-25",
+      "contractDeposit": "1000",
+      "contractTotalMoney": "1000",
+      "id": 4
+    },
+    {
+      "idEmployee": {
+        "employeeId": 6,
+        "employeeName": "Khúc Nguyễn An Nghi",
+        "employeeBirthday": "2000-11-08",
+        "employeeIdCard": "964542311",
+        "employeeSalary": 7000000,
+        "employeePhone": "0978653213",
+        "employeeEmail": "annghi20@gmail.com",
+        "employeeAddress": "294 Nguyễn Tất Thành, Đà Nẵng",
+        "positionId": 2,
+        "educationDegreeId": 2,
+        "divisionId": 3
+      },
+      "idCustomer": {
+        "id": 1,
+        "customerCode": "KH-0001",
+        "customerName": "Nguyễn Thị Hào",
+        "customerBirthDay": "1970-11-07",
+        "customerGender": "0",
+        "customerCMDD": "643431213",
+        "customerPhone": "0905423362",
+        "customerEmail": "thihao07@gmail.com",
+        "customerAddress": "23 Nguyễn Hoàng, Đà Nẵng",
+        "customerType": {
+          "id": 5,
+          "name": "Member"
+        },
+        "flag": 1
+      },
+      "idService": {
+        "id": 2,
+        "serviceCode": "DV-0002",
+        "serviceName": "House Princess 01",
+        "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+        "serviceArea": 14000,
+        "serviceCost": 5000000,
+        "serviceMaxPeople": 7,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có thêm bếp nướng",
+        "poolArea": 0,
+        "numberOfFloors": 3,
+        "freeAttachedService": "",
+        "rentType": {
+          "id": 2,
+          "name": "month"
+        },
+        "serviceTypeId": 2,
+        "active": 1
+      },
+      "contractStartDate": "2022-06-03",
+      "contractEndDate": "2022-07-01",
+      "contractDeposit": "1000",
+      "contractTotalMoney": "1000",
+      "id": 6
+    },
+    {
+      "idEmployee": {
+        "employeeId": 1,
+        "employeeName": "Nguyễn Văn An",
+        "employeeBirthday": "1970-11-07",
+        "employeeIdCard": "456231786",
+        "employeeSalary": 10000000,
+        "employeePhone": "0901234121",
+        "employeeEmail": "annguyen@gmail.com",
+        "employeeAddress": "295 Nguyễn Tất Thành, Đà Nẵng",
+        "positionId": 1,
+        "educationDegreeId": 3,
+        "divisionId": 1
+      },
+      "idCustomer": {
+        "id": 2,
+        "customerCode": "KH-0002",
+        "customerName": "Phạm Xuân Diệu",
+        "customerBirthDay": "1992-08-08",
+        "customerGender": "1",
+        "customerCMDD": "865342123",
+        "customerPhone": "0954333333",
+        "customerEmail": "xuandieu92@gmail.com",
+        "customerAddress": "K77/22 Thái Phiên, Quảng Trị",
+        "customerType": {
+          "id": 4,
+          "name": "Silver"
+        },
+        "flag": 1
+      },
+      "idService": {
+        "id": 1,
+        "serviceCode": "DV-0001",
+        "serviceName": "Villa Beach Front",
+        "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+        "serviceArea": 25000,
+        "serviceCost": 10000000,
+        "serviceMaxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 500,
+        "numberOfFloors": 4,
+        "freeAttachedService": "",
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        },
+        "serviceTypeId": 1,
+        "active": 1
+      },
+      "contractStartDate": "2022-06-05",
+      "contractEndDate": "2022-06-26",
+      "contractDeposit": "1000",
+      "contractTotalMoney": "1000",
+      "id": 8
+    },
+    {
+      "idEmployee": {
+        "employeeId": 2,
+        "employeeName": "Lê Văn Bình",
+        "employeeBirthday": "1997-04-09",
+        "employeeIdCard": "654231234",
+        "employeeSalary": 7000000,
+        "employeePhone": "0934212314",
+        "employeeEmail": "binhlv@gmail.com",
+        "employeeAddress": "22 Yên Bái, Đà Nẵng",
+        "positionId": 1,
+        "educationDegreeId": 2,
+        "divisionId": 2
+      },
+      "idCustomer": {
+        "id": 2,
+        "customerCode": "KH-0002",
+        "customerName": "Phạm Xuân Diệu",
+        "customerBirthDay": "1992-08-08",
+        "customerGender": "1",
+        "customerCMDD": "865342123",
+        "customerPhone": "0954333333",
+        "customerEmail": "xuandieu92@gmail.com",
+        "customerAddress": "K77/22 Thái Phiên, Quảng Trị",
+        "customerType": {
+          "id": 4,
+          "name": "Silver"
+        },
+        "flag": 1
+      },
+      "idService": {
+        "id": 1,
+        "serviceCode": "DV-0001",
+        "serviceName": "Villa Beach Front",
+        "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+        "serviceArea": 25000,
+        "serviceCost": 10000000,
+        "serviceMaxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 500,
+        "numberOfFloors": 4,
+        "freeAttachedService": "",
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        },
+        "serviceTypeId": 1,
+        "active": 1
+      },
+      "contractStartDate": "2022-06-12",
+      "contractEndDate": "2022-06-26",
+      "contractDeposit": "1000",
+      "contractTotalMoney": "1000",
+      "id": 9
+    },
+    {
+      "idEmployee": {
+        "employeeId": 1,
+        "employeeName": "Nguyễn Văn An",
+        "employeeBirthday": "1970-11-07",
+        "employeeIdCard": "456231786",
+        "employeeSalary": 10000000,
+        "employeePhone": "0901234121",
+        "employeeEmail": "annguyen@gmail.com",
+        "employeeAddress": "295 Nguyễn Tất Thành, Đà Nẵng",
+        "positionId": 1,
+        "educationDegreeId": 3,
+        "divisionId": 1
+      },
+      "idCustomer": null,
+      "idService": {
+        "id": 1,
+        "serviceCode": "DV-0001",
+        "serviceName": "Villa Beach Front",
+        "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
+        "serviceArea": 25000,
+        "serviceCost": 10000000,
+        "serviceMaxPeople": 10,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 500,
+        "numberOfFloors": 4,
+        "freeAttachedService": "",
+        "rentType": {
+          "id": 3,
+          "name": "day"
+        },
+        "serviceTypeId": 1,
+        "active": 1
+      },
+      "contractStartDate": "2022-06-04",
+      "contractEndDate": "2022-07-03",
+      "contractDeposit": "1000",
+      "contractTotalMoney": "1000",
+      "id": 10
+    }
+  ]
+}

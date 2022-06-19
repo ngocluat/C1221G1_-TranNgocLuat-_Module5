@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table table-striped " style="clear: both">
+        <tr STYLE="background-color: #4671c5">
+          <th> Contract Id</th>
+          <th> Money deposit</th>
+          <th> Day Start Contract</th>
+          <th> Day End Contract</th>
+          <th> Contract Total Money</th>
+          <th> Customer</th>
+          <th>Employee</th>
+          <th> Service</th>
+          <th> Edit</th>
+          <th>Delete</th>
+
+          <th>
+            <button type="submit" id="delete" class="btn btn-danger">
+              <i class="bi bi-recycle">Info</i>
+            </button>
+          </th>
+        </tr>
+
+        <tr *ngFor="let item of contracts">
+          <td>{{item.id}}</td>
+          <td>
+            <p *ngIf="item.contractDeposit== null">no reservation</p>
+            <p *ngIf="item.contractDeposit>=0 ">{{item.contractDeposit}}</p>
+          </td>
+          <td>{{item.contractStartDate | date:"dd-MM-yyyy"}}</td>
+          <td>{{item.contractEndDate| date:"dd-MM-yyyy"}}</td>
+          <td>{{item.contractTotalMoney| currency}}</td>
+          <td>{{item.idCustomer.customerName}}</td>
+          <td>{{item.idEmployee.employeeName}}</td>
+          <td>{{item.idService.serviceName}}</td>
+          <td>
+            <button type="button" class="btn btn-warning"><a [routerLink]="['/edit-contract']">Edit </a></button>
+          </td>
+
+          <td>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+              <i class="bi bi-x-lg"> Xóa </i>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info">
+              Info
+            </button>
+          </td>
+
+      </table>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// modal infomation -->
+<div class="modal fade" id="info" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="1">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        6. Write about a person you love most
+        My mother is a person I admire most. She devoted a lot of time and energy to the upbringing of my two brothers
+        and I. Despite working hard, she always made time to teach us many useful things which are necessary and
+        important in our later lives. Moreover, she is a good role model for me to follow. She always tries to get on
+        well with people who live next door and help everyone when they are in difficulties, so most of them respect and
+        love her. I admire and look up to my mother because she not only brings me up well but also stands by me and
+        gives some help if necessary. For example, when I encounter some difficulties, she will give me some precious
+        advice to help me solve those problems. She has a major influence on me and I hope that I will inherit some of
+        her traits.
+
+        Đoạn văn tiếng Anh tả mẹ: Bài viết tiếng Anh về mẹ
+
+        7. Write about the subject you hate most at school
+        Back in high school, the subject that I really hated was literature. I did not understand why others could write
+        easily but I could not. Honestly, I really admired my friends because they always wrote long essays, and theirs
+        all were full of feelings. When I look back now, I can figure out some reasons. First of all, I belonged to
+        natural science. That was why I always got five scores for literature but maximum ones for math. The second
+        reason was also the most critical factor that impacted negatively on my writing skill. I remember that I had to
+        write unreal things in my essays. For instance, my teachers were not perfect but I had to describe them as
+        angels. How could I write well when the lies always stopped my ideas? In my opinion, this was the worst teaching
+        way because the teachers were killing students' self-expression and teaching their students how to tell lies.
+        Fortunately, I was not good at writing, but I have never failed the exams because I always beat my brains out to
+        finish my essays.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

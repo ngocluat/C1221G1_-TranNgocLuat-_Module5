@@ -1,0 +1,153 @@
+<div class="container" style="width: 600px">
+  <form (ngSubmit)="submit()" [formGroup]="contractForm" novalidate>
+    <div class="box">
+      <label class="fl fontLabel"> Contract Deposit </label>
+      <div class="fr">
+
+        <input type="text" name="tt" placeholder="Deposit Money"
+               class="form-control" formControlName="contractDeposit">
+        <p *ngIf="contractForm.controls.contractDeposit.hasError('min')&&contractForm.controls.contractDeposit.touched">
+          must
+          not be less than zero!!</p>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="box">
+      <label class="fl fontLabel"> Day Start : </label>
+      <div class="fr">
+        <input type="date" name="secondName" placeholder=" Start Contract : "
+               class=" col-12 textBox form-control" formControlName="contractStartDate">
+      </div>
+<!--      <div style="color: #ff0200">-->
+<!--        <div *ngIf="contractForm.controls.contractStartDate.hasError('required')-->
+<!--            && contractForm.controls.contractStartDate.touched">-->
+<!--          Dat Start is required!!-->
+<!--        </div>-->
+<!--        <div *ngIf="!contractForm.controls.contractStartDate.hasError('required')-->
+<!--       && contractForm.controls.contractStartDate.hasError('pattern')">-->
+<!--          Malformed !!-->
+<!--        </div>-->
+<!--      </div>-->
+      <div *ngIf='!contractStartDate.valid && (contractStartDate.dirty ||contractStartDate.touched||submitted)'>
+        <small [hidden]='!contractEndDate.errors.required' class="text-danger">
+          Date Start  is required!!
+        </small>
+        <small [hidden]='!contractStartDate.errors.pattern' class="text-danger">
+          Malformed !!
+        </small>
+      </div>
+
+      <div class="clr"></div>
+    </div>
+    <div class="box">
+      <label class="fl fontLabel">Day End : </label>
+      <div class="fr">
+        <input type="date" name="secondName" placeholder=" End  Contract : "
+               class=" col-12 textBox form-control" formControlName="contractEndDate">
+        <div style="color: #ff0200">
+<!--          <div *ngIf="contractForm.controls.contractEndDate.hasError('required')-->
+<!--            && contractForm.controls.contractEndDate.touched">-->
+<!--            Date End is required!!-->
+<!--          </div>-->
+<!--          <div *ngIf="!contractForm.controls.contractEndDate.hasError('required')-->
+<!--       && contractForm.controls.contractEndDate.hasError('pattern')">-->
+<!--            Malformed !!-->
+<!--          </div>-->
+          <div *ngIf='!contractEndDate.valid && (contractEndDate.dirty ||contractEndDate.touched||submitted)'>
+            <small [hidden]='!contractEndDate.errors.required' class="text-danger">
+              Date End is required!!
+            </small>
+            <small [hidden]='!contractEndDate.errors.pattern' class="text-danger">
+              Malformed !!
+            </small>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    <div class="box">
+      <label class="fl fontLabel"> Total Money </label>
+      <div class="fr">
+        <label>
+          <input type="text" name="tt" placeholder="Toltal Money"
+                 class="form-control" formControlName="contractTotalMoney">
+<!--          <div>-->
+<!--            <p style="color: red" *ngIf="contractForm.controls.contractTotalMoney.hasError('required') &&-->
+<!--               contractForm.controls.contractTotalMoney.touched">-->
+<!--              is required!!-->
+<!--            </p>-->
+<!--            <p style="color: red" *ngIf="!contractForm.controls.contractTotalMoney.hasError('required')-->
+<!--             && contractForm.controls.contractTotalMoney.hasError('invalidMoney')-->
+<!--                && contractForm.controls.contractTotalMoney.touched">-->
+<!--              must not be less than zero !! </p>-->
+<!--          </div>-->
+          <div *ngIf='!contractTotalMoney.valid && (contractTotalMoney.dirty ||contractTotalMoney.touched||submitted)'>
+            <small [hidden]='!contractTotalMoney.errors.required' class="text-danger">
+              Total Money  is required!!
+            </small>
+              <small [hidden]='!contractTotalMoney.errors.invalidMoney' class="text-danger">
+                Total Money  is  Are you getting smaller? !!
+              </small>
+          </div>
+        </label>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="box">
+      <label class="fl fontLabel">Customer: </label>
+      <div class="fr">
+        <select class="form-control" formControlName="idCustomer">
+          <option [ngValue]="null">Choose CU</option>
+          <option  *ngFor="let cu of customers " [ngValue]="cu">
+            {{cu.customerName}}
+          </option>
+        </select>
+        <div *ngIf='!idCustomer.valid && (idCustomer.dirty ||idCustomer.touched||submitted)'>
+          <small [hidden]='!idCustomer.errors.required' class="text-danger">
+         Customer Name  is required!!
+          </small>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="box">
+      <label class="fl fontLabel"> Emlpoyee: </label>
+      <div class="fr">
+        <select class=" sources form-control" formControlName="idEmployee" id="sour1ces2">
+          <option [ngValue]="null">Choose Em</option>
+          <option *ngFor="let em of employees" [ngValue]="em">
+            {{em.employeeName}}
+          </option>
+        </select>
+        <div *ngIf='!idEmployee.valid && (idEmployee.dirty ||idEmployee.touched||submitted)'>
+          <small [hidden]='!idEmployee.errors.required' class="text-danger">
+            Employee  Name  is required!!
+          </small>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+      <div class="box">
+        <label class="fl fontLabel"> Service: </label>
+        <div class="fr">
+          <select class=" sources form-control" formControlName="idService" id="sources2">
+            <option [ngValue]="null">Choose SE</option>
+            <option *ngFor="let se of facilities" [ngValue]="se">
+              {{se.serviceName}}
+            </option>
+          </select>
+          <div *ngIf='!idService.valid && (idService.dirty ||idService.touched||submitted)'>
+            <small [hidden]='!idService.errors.required' class="text-danger">
+              Service   Name  is required!!
+            </small>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+      <div class="box">
+        <button class="btn btn-success" type="submit">
+          Add new
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

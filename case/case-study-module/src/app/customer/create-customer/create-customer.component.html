@@ -1,0 +1,139 @@
+<div class="mx-auto" style=" width: 40%;">
+  <form [formGroup]="customerForm" (ngSubmit)="submit()" novalidate>
+    <input type="hidden">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <div>
+            <label>
+              <select class="form-control" formControlName="customerType">
+                <option *ngFor="let type of customersType" [ngValue]="type">
+                  {{type.customerTypeName}}
+                </option>
+
+              </select>
+              <div *ngIf="!customerForm.controls.customerType?.valid && (customerForm.controls.customerType?.dirty
+              ||customerForm.controls.customerType?.touched)" style="color: red">
+                Cutsomer Type is not Null!!
+              </div>
+
+            </label>
+            <br>
+            <label class="form-label" for="form6Example3"> Customer Type </label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" formControlName="customerCode"/>
+          <div
+            *ngIf="!customerCode?.valid && (customerCode?.dirty ||customerCode?.touched)" style="color: red">
+            <div [hidden]="!customerCode.errors.required">
+              First Name is required!!
+            </div>
+            <div [hidden]="!customerCode.errors.minlength">
+              Min Length is 7 !!
+            </div>
+          </div>
+          <label class="form-label" for="form6Example2">Customer Code </label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Example3" class="form-control" formControlName="customerName"/>
+      <div
+        *ngIf="!customerForm.controls.customerName?.valid && (customerForm.controls.customerName?.dirty
+              ||customerForm.controls.customerName?.touched)" style="color: red">
+        Customer Name is not Null!!
+      </div>
+      <label class="form-label" for="form6Example3">Customer Name </label>
+    </div>
+
+
+    <div class="form-outline mb-4">
+      <input type="date" id="form6Example4" class="form-control" formControlName="customerBirthDay"/>
+      <div style="color: #ff0200">
+        <div *ngIf="customerForm.controls.customerBirthDay.hasError('required')
+            && customerForm.controls.customerBirthDay.touched">
+          customer BirthDay is required!!
+        </div>
+        <div *ngIf="!customerForm.controls.customerBirthDay.hasError('required')
+       && customerForm.controls.customerBirthDay.hasError('pattern')">
+          Malformed !!
+        </div>
+      </div>
+      <label class="form-label" for="form6Example4">Customer Birth day </label>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label text-right">Gender</label>
+      <div class="col-sm-1">
+        <div class="form-check">
+          <input formControlName="customerGender" class="form-check-input"
+                 type="radio" id="MaleRadio" value="1" >
+          <label class="form-check-label" for="MaleRadio">Male</label>
+        </div>
+        <div class="form-check">
+          <input formControlName="customerGender" class="form-check-input"
+                 type="radio" id="FemaleRadio" value="0" >
+          <label class="form-check-label" for="FemaleRadio">Female</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input type="number" id="form6Example6" class="form-control" formControlName="customerCMDD"/>
+      <div style="color: red">
+        <p *ngIf="customerForm.controls.customerCMDD.hasError('required')
+        && customerForm.controls.customerCMDD.touched"> This field cannot be left blank!!</p>
+        <p *ngIf="customerForm.controls.customerCMDD.hasError('pattern')
+        && customerForm.controls.customerCMDD.touched"> This field is not formatted!!</p>
+      </div>
+      <label class="form-label" for="form6Example6"> Số CMND </label>
+    </div>
+
+
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Example14" class="form-control" formControlName="customerPhone"/>
+      <div style=" color: #ff0200">
+        <p *ngIf="customerForm.controls.customerPhone.hasError('required') && customerForm.controls.customerPhone.touched"> cannot be blank</p>
+        <p *ngIf="customerForm.controls.customerPhone.hasError('pattern')">
+          Malformed!! </p>
+      </div>
+      <label class="form-label" for="form6Example14">Customer Phone </label>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Exampl24" class="form-control" formControlName="customerEmail"/>
+      <div style="color: red ">
+        <p
+          *ngIf="customerForm.controls.customerEmail.hasError('required') &&customerForm.controls.customerEmail.touched ">
+          Email is
+          required!! </p>
+        <p *ngIf="!customerForm.controls.customerEmail.hasError('required')
+       && customerForm.controls.customerEmail.hasError('pattern') &&customerForm.controls.customerEmail.touched "> do
+          not correct format!!</p>
+      </div>
+      <label class="form-label" for="form6Exampl24">Customer Email </label>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Example34" class="form-control" formControlName="customerAddress"/>
+      <div
+        *ngIf="!customerForm.controls.customerAddress?.valid && (customerForm.controls.customerAddress?.dirty
+              ||customerForm.controls.customerAddress?.touched)" style="color: red">
+        Customer Address is not Null!!
+      </div>
+      <label class="form-label" for="form6Example34">Customer Address </label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mb-4"
+            [disabled]="!customerForm.valid" >
+      Submit
+    </button>
+  </form>
+</div>
+
