@@ -1,0 +1,19 @@
+<h1>Cập nhật thông tin danh Mục</h1>
+<form [formGroup]="toDoForm" (ngSubmit)="deleteTodo(id)">
+  <table>
+    <tr>
+      <td>content :</td>
+      <td><input type="text" formControlName="content"></td>
+    </tr>
+    <tr>
+      <td>complete :</td>
+      <td><input type="text" formControlName="complete"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button>Xóa </button>
+      </td>
+    </tr>
+  </table>
+</form>

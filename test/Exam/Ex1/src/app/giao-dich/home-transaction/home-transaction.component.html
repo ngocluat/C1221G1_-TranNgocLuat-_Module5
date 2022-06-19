@@ -1,0 +1,257 @@
+<div class="container">
+
+  <div class="row">
+    <div class="input-group col-7" *ngIf="transaction.length >0">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="">Tìm Kiếm </span>
+      </div>
+      <input type="text" class="form-control" placeholder="Name Customer" id="name" #maGiaoDich>
+      <input type="text" class="form-control" placeholder="Phone Customer " id="phone" #donGia>
+
+      <button class=" btn btn-outline-info" (click)="searching()"> Search</button>
+    </div>
+    <div class="col-lg-12">
+      <div class="d-flex justify-content-center my-5" *ngIf="transaction.length == 0">
+        <h4 style="font-weight: bold"> KHÔNG CÓ KHÁCH HÀNG NÀO CẢ </h4>
+      </div>
+      <table *ngIf="transaction.length >0" class="table table-striped " style="clear: both">
+        <tr style="background-color: #4671c5; color: white  ">
+          <th>Customer Id</th>
+          <th>Name Customer</th>
+          <th>Code Transaction</th>
+          <th>Type Service</th>
+          <th>Transaction Day</th>
+          <th>Price</th>
+          <th>Area</th>
+          <th> Edit</th>
+          <th>Delete</th>
+          <th>
+            <button type="submit" id="delete" class="btn btn-danger">
+              <i class="bi bi-recycle">Info</i>
+            </button>
+          </th>
+        </tr>
+
+
+        <tr *ngFor="let item of transaction | paginate : { itemsPerPage: 6, currentPage: p }; index as i">
+          <td>{{item.id}}</td>
+          <td>{{item.customer.tenKhachHang}}</td>
+          <td>{{item.maGiaoDich}}</td>
+          <td>{{item.loaiDichVu}}</td>
+          <td>{{item.ngayGiaoDich|date:"dd-MM-yyyy"}}</td>
+          <td>{{item.donGia}}</td>
+          <td>{{item.dienTich}}</td>
+          <td>
+            <button type="button" class="btn btn-warning"><a [routerLink]="['/edit', item.id]">
+              Edit </a></button>
+          </td>
+          <td>
+
+            <button type="button" class="btn btn-danger" data-toggle="modal" (click)="getGiaoDich(item)"
+                    data-target="#staticBackdrop" style="color: black">
+              Xóa
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#info" (click)="getGiaoDich(item)">
+
+                Detail
+            </button>
+          </td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div style="justify-content: space-around;display: flex;">
+  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="color: red"> you sure want delete all information of : {{customerDelete.loaiDichVu}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" (click)="confirmDelete()" class="btn btn-primary" data-dismiss="modal">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--// modal info  -->
+<div class="modal fade" id="info" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="1">Information </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+               style="font-size: medium; font-family: Arial;">
+          <tbody>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+                     style=" font-size: medium; font-family: Arial;">
+                <tbody>
+                <tr>
+                  <td style="padding: 0px; vertical-align: middle;"><h3 color="#000000" class="sc-fBuWsC eeihxG"
+                                                                        style="margin: 0px; font-size: 18px; color: rgb(0, 0, 0);">
+
+                    <span> </span><span>&nbsp;</span><span></span></h3>
+                    <p color="#000000" font-size="medium" class="sc-fMiknA bxZCMx"
+                       style="margin: 0px; color: rgb(0, 0, 0); font-size: 14px; line-height: 22px;">
+
+                      Ngày Giao Dịch <span> {{customerDelete.ngayGiaoDich}}</span></p>
+                    <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+                           style="; font-size: medium; font-family: Arial; width: 100%;">
+                      <tbody>
+                      <tr>
+                        <td height="30"></td>
+                      </tr>
+                      <tr>
+                        <td color="#f2547d" direction="horizontal" height="1" class="sc-jhAzac hmXDXQ"
+                            style="width: 100%; border-bottom: 1px solid rgb(242, 84, 125); border-left: none; display: block;"></td>
+                      </tr>
+                      <tr>
+                        <td height="30"></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+                           style="; font-size: medium; font-family: Arial;">
+                      <tbody>
+                      <tr height="25" style="vertical-align: middle;">
+                        <td width="30" style="vertical-align: middle;">
+                          <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+                                 style="; font-size: medium; font-family: Arial;">
+                            <tbody>
+                            <tr>
+                              <td style="vertical-align: bottom;"><span color="#f2547d" width="11"
+                                                                        class="sc-jlyJG bbyJzT"
+                                                                        style="display: block; background-color: rgb(242, 84, 125);"><img
+                                src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/phone-icon-2x.png"
+                                color="#f2547d" width="13" class="sc-iRbamj blSEcj"
+                                style="display: block; background-color: rgb(242, 84, 125);"></span></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td style="padding: 0px; color: rgb(0, 0, 0);"><a href="tel:+84" color="#000000"
+                                                                          class="sc-gipzik iyhjGb"
+                                                                          style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;"><span>+84</span></a>
+                          | <a href="tel:0333167149" color="#000000" class="sc-gipzik iyhjGb"
+                               style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">
+                            Đơn Giá  :<span>{{customerDelete.donGia}}</span></a>
+                        </td>
+                      </tr>
+                      <tr height="25" style="vertical-align: middle;">
+                        <td width="30" style="vertical-align: middle;">
+                          <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+                                 style="; font-size: medium; font-family: Arial;">
+                            <tbody>
+                            <tr>
+                              <td style="vertical-align: bottom;"><span color="#f2547d" width="11"
+                                                                        class="sc-jlyJG bbyJzT"
+                                                                        style="display: block; background-color: rgb(242, 84, 125);"><img
+                                src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/email-icon-2x.png"
+                                color="#f2547d" width="13" class="sc-iRbamj blSEcj"
+                                style="display: block; background-color: rgb(242, 84, 125);"></span></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td style="padding: 0px;"><a href="mailto:luatzxcv@gmail.com" color="#000000"
+                                                     class="sc-gipzik iyhjGb"
+                                                     style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">
+                          Loại Dịch Vụ  :<span>{{customerDelete.loaiDichVu}}</span></a>
+                        </td>
+                      </tr>
+                      <tr height="25" style="vertical-align: middle;">
+                        <td width="30" style="vertical-align: middle;">
+                          <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+                                 style="; font-size: medium; font-family: Arial;">
+                            <tbody>
+                            <tr>
+                              <td style="vertical-align: bottom;"><span color="#f2547d" width="11"
+                                                                        class="sc-jlyJG bbyJzT"
+                                                                        style="display: block; background-color: rgb(242, 84, 125);"><img
+                                src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/link-icon-2x.png"
+                                color="#f2547d" width="13" class="sc-iRbamj blSEcj"
+                                style="display: block; background-color: rgb(242, 84, 125);"></span></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td style="padding: 0px;"><a href="https://www.facebook.com/luat.tranngoc.94" color="#000000"
+                                                     class="sc-gipzik iyhjGb"
+                                                     style="text-decoration: none; color: rgb(0, 0, 0); font-size: 12px;">
+                          Mã Giao Dịch :<span>{{customerDelete.maGiaoDich}}</span></a>
+                        </td>
+                      </tr>
+                      <tr height="25" style="vertical-align: middle;">
+                        <td width="30" style="vertical-align: middle;">
+                          <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+                                 style="; font-size: medium; font-family: Arial;">
+                            <tbody>
+                            <tr>
+                              <td style="vertical-align: bottom;"><span color="#f2547d" width="11"
+                                                                        class="sc-jlyJG bbyJzT"
+                                                                        style="display: block; background-color: rgb(242, 84, 125);"><img
+                                src="https://cdn2.hubspot.net/hubfs/53/tools/email-signature-generator/icons/address-icon-2x.png"
+                                color="#f2547d" width="13" class="sc-iRbamj blSEcj"
+                                style="display: block; background-color: rgb(242, 84, 125);"></span></td>
+                            </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td style="padding: 0px;"><span color="#000000" class="sc-csuQGl CQhxV"
+                                                        style="font-size: 12px; color: rgb(0, 0, 0);">
+ Diện Tích Sũ Dụng  :    <span>{{customerDelete.dienTich}}</span></span>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" class="sc-gPEVay eQYmiW"
+                           style="; font-size: medium; font-family: Arial;">
+                      <tbody>
+                      <tr>
+                        <td height="30"></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <a href="https://www.hubspot.com/email-signature-generator?utm_source=create-signature"
+                       target="_blank" rel="noopener noreferrer" class="sc-gisBJw kDlVKO"
+                       style="font-size: 12px; display: block; color: rgb(0, 0, 0);">Create Your Own Free Signature</a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

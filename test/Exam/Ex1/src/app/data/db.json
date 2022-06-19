@@ -1,0 +1,132 @@
+{
+  "customer": [
+    {
+      "id": 2,
+      "maKhachHang": "KH-34568",
+      "tenKhachHang": "Lê Thị Lý ",
+      "soDienThoai": "0363868397",
+      "email": "lethilyb@gmail.com"
+    },
+    {
+      "id": 3,
+      "maKhachHang": "KH-64554",
+      "tenKhachHang": "Trần Luật",
+      "soDienThoai": "00545816416",
+      "email": "luatfsb@gmail.com"
+    },
+    {
+      "id": 4,
+      "maKhachHang": "KH-76867",
+      "tenKhachHang": "Trần Thị Thật ",
+      "soDienThoai": "464904308",
+      "email": "tranfluat@gmail.com"
+    }
+  ],
+  "giaoDich": [
+    {
+      "id": 2,
+      "maGiaoDich": "GD-354",
+      "customer": {
+        "id": 2,
+        "maKhachHang": "KH-34568",
+        "tenKhachHang": "Trần Luật ",
+        "soDienThoai": "0363868397",
+        "email": "lethilyb@gmail.com"
+      },
+      "ngayGiaoDich": "2003-02-14",
+      "loaiDichVu": "Tốt",
+      "donGia": 6576575,
+      "dienTich": 5576
+    },
+    {
+      "id": 3,
+      "maGiaoDich": "GD-799",
+      "customer": {
+        "id": 2,
+        "maKhachHang": "KH-34568",
+        "tenKhachHang": "Trần Thị Thật  ",
+        "soDienThoai": "0363868397",
+        "email": "lethilyb@gmail.com"
+      },
+      "ngayGiaoDich": "2003-02-02",
+      "loaiDichVu": "Tốt",
+      "donGia": 6576575,
+      "dienTich": 5576
+    },
+    {
+      "id": 4,
+      "maGiaoDich": "GD-2954",
+      "customer": {
+        "id": 2,
+        "maKhachHang": "KH-34568",
+        "tenKhachHang": "Trần Hoan ",
+        "soDienThoai": "0363868397",
+        "email": "lethilyb@gmail.com"
+      },
+      "ngayGiaoDich": "2003-08-23",
+      "loaiDichVu": "Tốt",
+      "donGia": 6576575,
+      "dienTich": 5576
+    },
+    {
+      "id": 6,
+      "maGiaoDich": "GD-6461",
+      "customer": {
+        "id": 4,
+        "maKhachHang": "KH-76867",
+        "tenKhachHang": "Trần Thị Thật ",
+        "soDienThoai": "464904308",
+        "email": "tranfluat@gmail.com"
+      },
+      "ngayGiaoDich": "2022-06-21",
+      "loaiDichVu": "Tốt Nhất Vietj nam ",
+      "donGia": 10002,
+      "dienTich": 1002
+    },
+    {
+      "id": 7,
+      "maGiaoDich": "GD-4448",
+      "customer": {
+        "id": 3,
+        "maKhachHang": "KH-64554",
+        "tenKhachHang": "Trần Luật",
+        "soDienThoai": "00545816416",
+        "email": "luatfsb@gmail.com"
+      },
+      "ngayGiaoDich": "2022-06-25",
+      "loaiDichVu": "Toot s nhaats nhaf ",
+      "donGia": 1000,
+      "dienTich": 544544
+    },
+    {
+      "id": 8,
+      "maGiaoDich": "GD-2954",
+      "customer": {
+        "id": 2,
+        "maKhachHang": "KH-34568",
+        "tenKhachHang": "Lê Thị Lý ",
+        "soDienThoai": "0363868397",
+        "email": "lethilyb@gmail.com"
+      },
+      "ngayGiaoDich": "2022-06-02",
+      "loaiDichVu": "q",
+      "donGia": 11,
+      "dienTich": 11
+    },
+    {
+      "id": 9,
+      "maGiaoDich": "GD-2954",
+      "customer": {
+        "id": 2,
+        "maKhachHang": "KH-34568",
+        "tenKhachHang": "Lê Thị Lý ",
+        "soDienThoai": "0363868397",
+        "email": "lethilyb@gmail.com"
+      },
+      "ngayGiaoDich": "2022-06-03",
+      "loaiDichVu": "Tốt ",
+      "donGia": 122,
+      "dienTich": 122
+    }
+  ]
+}

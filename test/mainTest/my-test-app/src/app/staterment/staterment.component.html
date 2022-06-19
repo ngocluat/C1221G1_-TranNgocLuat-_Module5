@@ -1,0 +1,50 @@
+<h1 *ngIf="show">Ẩn </h1>
+<h1 *ngIf="!show">Hiện</h1>
+<button (click)="show= !show" class="btn btn-success">
+  click hide()
+</button>
+
+
+<div>
+  <ul>
+    <li *ngFor="let a of arr">
+      <p>{{a}}</p>
+    </li>
+  </ul>
+</div>
+
+
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>Tiếng Anh</th>
+    <th>Tiếng Viêt</th>
+    <th>Memori</th>
+    <th>Xóa </th>
+  </tr>
+  <tr *ngFor="let item of arrobj">
+    <td>{{item.id}}</td>
+    <td>{{item.en}}</td>
+    <td>{{item.vn}}</td>
+    <td>{{item.memorized}}</td>
+    <td> <button class="btn btn-danger" (click)="remove(item.id)">Xóa</button> </td>
+  </tr>
+</table>
+<div *ngIf="show">
+  <input type="text" [(ngModel)]="newEn">
+  <input type="text" [(ngModel)]="newVn">
+  <button  class="btn btn-warning"(click)="add()"> thêm mới</button>
+</div>
+<button  class="btn btn-warning" (click)="show = ! show"> thêm mưới 1 từ ngữ</button>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p style="color:red">
+  -------------------------kết nối back end ----------------
+</p>
+<app-connet></app-connet>

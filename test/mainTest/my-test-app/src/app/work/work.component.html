@@ -1,0 +1,20 @@
+<p>work works!</p>
+<h1 [style.color]="formNgMo.length% 2 ===0 ?'green' : 'blue'">tôi là {{iamfamily}}</h1>
+<img [src]="img" alt="'" [hidden]="fogot">
+<button (click)="evenL()">click here</button>
+<br>
+template:
+<input (keyup)="showEvent($event)">
+<p> Tôi Là : {{name}}</p>
+
+<input  type="text" [(ngModel)]="formNgMo" placeholder="Nhập Vào : ">
+<p [style.color]="formNgMo.length% 2 ===0 ?'green' : 'blue'"> Tôi Là : {{formNgMo}}</p>
+<app-staterment>
+
+</app-staterment>
+
+
+
+
+
+

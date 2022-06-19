@@ -1,0 +1,73 @@
+<div class="container">
+  <form [formGroup]="person" (ngSubmit)="submit()" novalidate>
+    <h3>Quick Contact</h3>
+    <h4 style="text-align: center">Let's Create a Sign!</h4>
+    <fieldset>
+      <input class="form-control" formControlName="email" placeholder="Email  Ex: tranluat@gmial.com" type="email"
+             tabindex="1" autofocus>
+      <div style="color: #ff0200">
+        <p *ngIf="person.controls.email.hasError('required') &&person.controls.email.touched "> First Name is
+          required!! </p>
+        <p *ngIf="!person.controls.email.hasError('required')
+       && person.controls.email.hasError('email') &&
+       person.controls.email.touched "> do not correct format!!</p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <input class="form-control" formControlName="password" placeholder="  password:s"
+             type="password" tabindex="2">
+      <div style=" color: #ff0200">
+        <p *ngIf="person.controls.password.hasError('required') && person.controls.password.touched">
+          Password is required!!</p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <input class="form-control" formControlName="passwordComfim" placeholder="confirm password:s"
+             type="password" tabindex="2">
+      <div style=" color: #ff0200">
+        <p *ngIf="person.controls.passwordComfim.hasError('required') && person.controls.passwordComfim.touched">
+          Password confim is required!!</p>
+        <p *ngIf="person.errors?.invalid0">
+          does not match password  </p>
+      </div>
+    </fieldset>
+    <fieldset>
+      <select class="form-control">
+        <option>choose country</option>
+        <option formControlName="country"> Viet Nam</option>
+        <option formControlName="country">Lao</option>
+        <option formControlName="country"> America</option>
+      </select>
+      <div
+        *ngIf="!country?.valid && (country?.dirty ||country?.touched)" style="color: red">
+        <div [hidden]="!country.errors.required">
+          Country is required!!
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <input class="form-control" formControlName="age" placeholder="age" type="number" tabindex="4">
+    </fieldset>
+    <fieldset>
+      Nam
+      <input formControlName="gender" placeholder="gender" type="radio" name="gender" tabindex="4">
+      Nữ
+      <input formControlName="gender" placeholder="gender" type="radio" name="gender" tabindex="4">
+    </fieldset>
+    <fieldset>
+      <input class="form-control" formControlName="phone" placeholder="Phone  Ex: 0333167149" type="number"
+             tabindex="4">
+      <div style=" color: #ff0200">
+        <p *ngIf="person.controls.phone.hasError('required') && person.controls.phone.touched"> cannot be blank</p>
+        <p *ngIf="!person.controls.phone.hasError('required') && person.controls.phone.hasError('pattern')">
+          Malformed!! </p>
+      </div>
+
+    </fieldset>
+    <fieldset>
+      <button type=" submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+
+
+</div>

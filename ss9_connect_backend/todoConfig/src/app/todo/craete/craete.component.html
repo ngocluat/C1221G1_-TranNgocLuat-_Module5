@@ -1,0 +1,8 @@
+<h1>Tạo danh mục mới</h1>
+<form [formGroup]="toDoForm" (ngSubmit)="submit()">
+  <p>Nội dung :</p>
+  <input type="text" formControlName="content">
+  <p>Complete :</p>
+  <input type="text" formControlName="complete">
+  <button type="submit"> Thêm </button>
+</form>

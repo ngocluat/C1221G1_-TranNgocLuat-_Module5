@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sona Template">
+    <meta name="keywords" content="Sona, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sona | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+
+
+</head>
+<body>
+<header class="header-section">
+    <div class="top-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="tn-left">
+                        <li><i class="fa fa-phone"></i> (12)333 167 149 </li>
+                        <li><i class="fa fa-envelope"></i>luatzxcv@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tn-right">
+                        <div class="top-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                        <a href="#" class="bk-btn">Booking Now</a>
+                        <div class="language-option">
+                            <img src="img/flag.jpg" alt="">
+                            <span>EN <i class="fa fa-angle-down"></i></span>
+                            <div class="flag-dropdown">
+                                <ul>
+                                    <li><a href="#">Zi</a></li>
+                                    <li><a href="#">Fr</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="nav-menu">
+                        <nav class="mainmenu">
+                            <ul>
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li><a href="">Service</a></li>
+                                <li><a href="#">Customer </a>
+                                    <ul class="dropdown">
+                                        <li><a href="customer/customer.html">List Customer </a></li>
+                                        <li><a href="customer/create.html">Create</a></li>
+                                        <li><a href="customer/edit.html">Edit Customer </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Contact </a>
+                                    <ul class="dropdown">
+                                        <li><a href="contract/list-contract.html">List Contract </a></li>
+                                        <li><a href="contract/create.html">Create Contact </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://www.facebook.com/luat.tranngoc.94">Author</a>
+                                    <ul class="dropdown">
+                                        <li><a href="https://www.facebook.com/luat.tranngoc.94">Trần Ngọc Luật </a></li>
+                                        <li><a href="contract/create.html"> Kết Hôn </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./contact.html" style="color: red">Help !! </a></li>
+                            </ul>
+                        </nav>
+                        <div class="nav-right search-switch">
+                            <i class="icon_search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="mx-auto" style=" width: 40%;">
+
+    <form th:action="@{/customer/create-customer}" method="post" th:object="${customerDto}">
+        <input type="hidden">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-outline">
+                    <div>
+                        <label>
+                            <select>
+                                <option>
+                                </option>
+                            </select>
+                        </label>
+                        <label class="form-label" for="form6Example3"> Customer Type </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-outline">
+                    <input type="text" id="form6Example2" class="form-control"/>
+                    <label class="form-label" for="form6Example2">Customer Code </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+
+            <input type="text" id="form6Example3" class="form-control"/>
+            <label class="form-label" for="form6Example3">Customer Name </label>
+        </div>
+
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+            <input type="date" id="form6Example4" class="form-control"/>
+            <label class="form-label" for="form6Example4">Customer Birth day </label>
+        </div>
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="form6Example5" class="form-control" select>
+            <option value="1">Nam</option>
+            <option value="0">Nữ</option>
+            </select>
+
+            <label class="form-label">Customer Gender </label>
+        </div>
+
+        <!-- Number input -->
+        <div class="form-outline mb-4">
+            <input type="number" id="form6Example6" class="form-control"/>
+            <label class="form-label" for="form6Example6"> Số CMND </label>
+        </div>
+
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="form6Example14" class="form-control"/>
+            <label class="form-label" for="form6Example14">Customer Phone </label>
+        </div>
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="form6Exampl24" class="form-control"/>
+            <label class="form-label" for="form6Exampl24">Customer Email </label>
+        </div>
+        <!-- Text input -->
+        <div class="form-outline mb-4">
+
+            <input type="text" id="form6Example34" class="form-control"/>
+            <label class="form-label" for="form6Example34">Customer Address </label>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Place order</button>
+
+
+    </form>
+</div>
+
+<footer class="footer-section">
+    <div class="container">
+        <div class="footer-text">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="ft-about">
+                        <div class="logo">
+                            <a href="#">
+                                <img src="img/footer-logo.png" alt="">
+                            </a>
+                        </div>
+                        <p>We inspire and reach millions of travelers<br/> across 90 local websites</p>
+                        <div class="fa-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="ft-contact">
+                        <h6>Contact Us</h6>
+                        <ul>
+                            <li>(12) 345 67890</li>
+                            <li>info.colorlib@gmail.com</li>
+                            <li>856 Cordia Extension Apt. 356, Lake, United State</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="ft-newslatter">
+                        <h6>New latest</h6>
+                        <p>Get the latest updates and offers.</p>
+                        <form action="#" class="fn-form">
+                            <input type="text" placeholder="Email">
+                            <button type="submit"><i class="fa fa-send"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Environmental Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="co-text">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This template is made with <i class="fa fa-heart"
+                                                                                aria-hidden="true"></i> by <a
+                                    href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Search model Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch"><i class="icon_close"></i></div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+
+</body>
+</html>

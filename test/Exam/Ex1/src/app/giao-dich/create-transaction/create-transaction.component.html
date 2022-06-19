@@ -1,0 +1,85 @@
+<div class="container">
+  <form [formGroup]="transctionForm" (ngSubmit)="submit()" novalidate>
+    <h3>Quick Contact</h3>
+    <h4>Contact us today, and get reply with in 24 hours!</h4>
+    <fieldset>
+      <input class="form-control" formControlName="maGiaoDich" placeholder=" mã Giao Dịch " type="text">
+      <div style="color: #ff0200">
+        <div *ngIf="transctionForm.controls.maGiaoDich.hasError('required')
+					&& transctionForm.controls.maGiaoDich.touched">
+          Dat Start is required!!
+        </div>
+        <div *ngIf="!transctionForm.controls.maGiaoDich.hasError('required')
+			   && transctionForm.controls.maGiaoDich.hasError('pattern')">
+          Malformed !!
+        </div>
+        <div  *ngIf="transctionForm.get('maGiaoDich').hasError('idAlreadyExists')">
+          ID has been registered
+        </div>
+      </div>
+
+    </fieldset>
+    <fieldset>
+      <div class="form-group row">
+        <label for="customer" class="col-sm-3 col-form-label">Customer  </label>
+        <div class="col-sm-9">
+          <select id="customer"
+                  class="form-control"
+                  formControlName="customer"
+                  [class.is-invalid]="(customer.touched||submitted || customer.dirty) && customer.invalid"
+                  [class.is-valid]="customer.valid">
+            <option value="">Select Customer Type</option>
+            <option *ngFor="let item of customers"
+                    [ngValue]="item">{{item.tenKhachHang}}</option>
+          </select>
+          <div *ngIf="!customer.valid && (customer.dirty ||customer.touched||submitted)">
+            <small class="text-danger" [hidden]="!customer.errors.required">
+              Customer Type is required
+            </small>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <input class="form-control" formControlName="ngayGiaoDich" placeholder="Ngày Giao Dịch " type="date">
+      <div style="color: #ff0200">
+        <div *ngIf="transctionForm.controls.ngayGiaoDich.hasError('required')
+					&& transctionForm.controls.ngayGiaoDich.touched">
+          Dat Start is required!!
+        </div>
+        <div *ngIf="!transctionForm.controls.ngayGiaoDich.hasError('required')
+			   && transctionForm.controls.ngayGiaoDich.hasError('pattern')">
+          Malformed !!
+        </div>
+      </div>
+
+    </fieldset>
+    <fieldset>
+      <input class="form-control" formControlName="loaiDichVu" placeholder="Loại Dịch Vụ " type="text">
+      <div
+        *ngIf="!transctionForm.controls.loaiDichVu?.valid && (transctionForm.controls.loaiDichVu?.dirty
+              ||transctionForm.controls.loaiDichVu?.touched)" style="color: red">
+        pool Area Service is not Null!!
+      </div>
+    </fieldset>
+    <fieldset>
+      <input class="form-control" formControlName="donGia" placeholder="Đơn Giá " type="number">
+    </fieldset>
+    <fieldset>
+      <input class="form-control" formControlName="dienTich" placeholder="Diện Tích" type="number">
+      <div *ngIf='!dienTich.valid && (dienTich.dirty ||dienTich.touched || submitted)'>
+        <small [hidden]='!dienTich.errors.required' class="text-danger">
+           Money  is required!!
+        </small>
+        <small [hidden]='!dienTich.errors.min' class="text-danger">
+           Money  is  Are you getting smaller? !!
+        </small>
+      </div>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+
+
+</div>

@@ -1,0 +1,12 @@
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Tiếng Việt</th>
+    <th> Detail</th>
+  </tr>
+  <tr *ngFor="let item of words">
+    <td>{{item.id}}</td>
+    <td><a [routerLink]="['/vietnam',item.id]">{{item.vietNam}}</a></td>
+    <td><a [routerLink]="['/detail',item.id]">{{item.detail}}</a></td>
+  </tr>
+</table>

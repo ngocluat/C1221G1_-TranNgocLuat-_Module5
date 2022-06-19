@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <td> Id</td>
+    <td> content</td>
+    <td> complete</td>
+    <td> Edit</td>
+    <td> Delete</td>
+  </tr>
+  <tr *ngFor="let item of todos">
+    <td>{{item.id}}</td>
+    <td>{{item.content}}</td>
+    <td>{{item.complete}}</td>
+    <td><a [routerLink]="['/edit',item.id]">Edit </a></td>
+    <td><a [routerLink]="['/delete',item.id]">Delete  </a></td>
+  </tr>
+</table>

@@ -1,0 +1,35 @@
+<div class="page">
+  <div class="container">
+    <div class="left">
+      <div class="login">Login</div>
+      <div class="eula">By logging in you agree to the ridiculously long terms that you didn't bother to read</div>
+    </div>
+     <form [formGroup]="login" novalidate>
+    <div class="right">
+      <div class="form">
+        <label for="email">Email</label>
+        <input formControlName="email" type="email" id="email" class="form-control">
+        <div *ngIf="!email?.valid && (email?.dirty ||email?.touched)" style="color: red">
+          <div [hidden]="!email.errors.required">
+            Country is required!!
+          </div>
+          <div [hidden]="!email.errors.email">
+            Email invalidate!!
+          </div>
+        </div>
+        <label for="password">Password</label>
+        <input formControlName="passWord" type="password" id="password" >
+        <div *ngIf="!passWord?.valid && (passWord?.dirty ||passWord?.touched)" style="color: red">
+          <div [hidden]="!passWord.errors.required">
+            Pass Word  is required!!
+          </div>
+          <div [hidden]="!passWord.errors.minlength">
+            Pass Word  min length 6 !!
+          </div>
+        </div>
+        <input type="submit" id="submit" value="Submit">
+      </div>
+    </div>
+     </form>
+  </div>
+</div>
