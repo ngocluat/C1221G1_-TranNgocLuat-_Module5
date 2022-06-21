@@ -5,8 +5,8 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="">Tìm Kiếm </span>
       </div>
-      <input type="text" class="form-control" placeholder="Name Customer" id="name" #name>
-      <input type="text" class="form-control" placeholder="Phone Customer " id="phone" #phone>
+      <input type="text" class="form-control" placeholder="Biển Số Xe " name="bienSoXe" #name>
+      <input type="text" class="form-control" placeholder="Tên Nhà Xe  " name="tenNhaXe" #phone>
       <button class=" btn btn-outline-info"> Search</button>
     </div>
     <div class="col-lg-12">
@@ -24,7 +24,8 @@
           <th> Edit</th>
           <th>Delete</th>
         </tr>
-        <tr *ngFor="let item of xe |paginate : { itemsPerPage: 5, currentPage: p }; index as i">
+        <!--        |paginate : { itemsPerPage: 5, currentPage: p }; index as i -->
+        <tr *ngFor="let item of xe ">
           <td>{{item.bienSoXe}}</td>
           <td>{{item.loaiXe}}</td>
           <td>{{item.tenNhaXe}}</td>
@@ -52,12 +53,14 @@
   </div>
 </div>
 
-<div style="justify-content: space-around;display: flex;">
-  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>
-</div>
+<!-- // phân trang fe -->
+<!--<div style="justify-content: space-around;display: flex;">-->
+<!--  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>-->
+<!--</div>-->
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" [length]="totalElements" (page)="nextPage($event)"> </mat-paginator>
 
 <!-- modal delete -->
-
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">

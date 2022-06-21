@@ -65,7 +65,6 @@ export class EditComponent implements OnInit {
     const facilityValue = this.carForm.value;
     console.log(facilityValue);
     this.xeService.updateXe(this.id, facilityValue).subscribe(next => {
-      alert('Cập nhật thành công');
     }, e => {
       console.log(e);
     }, () => {

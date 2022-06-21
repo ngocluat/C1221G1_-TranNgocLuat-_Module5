@@ -18,6 +18,6 @@ public interface ICarService {
 
     List<Xe> findAll();
 
-    Page<Xe> findAllPage(Pageable pageable);
+    Page<Xe> findAllPage(String tenNhaXe, String bienSoXe, Pageable pageable);
 
 }

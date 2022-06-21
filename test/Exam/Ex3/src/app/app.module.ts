@@ -12,6 +12,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { EditComponent } from './main-event/edit/edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CreateComponent } from './main-event/create/create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import { CreateComponent } from './main-event/create/create.component';
     EditComponent,
     CreateComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgxPaginationModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgxPaginationModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatPaginatorModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -4,10 +4,13 @@ import com.example.model.Xe;
 import com.example.service.ICarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -30,9 +33,17 @@ public class CarRestController {
 
 
     // ok
+    // em phân trang rồi mà nó lạ lắm 
     @GetMapping("page-car")
-    public ResponseEntity<Page<Xe>> getPageCar(Pageable pageable) {
-        Page<Xe> allPageCar = iCarService.findAllPage(pageable);
+    public ResponseEntity<Page<Xe>> getPageCar(@RequestParam Optional<String> bienSoXe,
+                                               @RequestParam Optional<String> tenNhaXe,
+                                               @RequestParam(defaultValue = "0") int page,
+                                               @RequestParam(defaultValue = "5") int size) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        String valueNhaXe = tenNhaXe.orElse("");
+        String valueBienSo = bienSoXe.orElse("");
+        Page<Xe> allPageCar = iCarService.findAllPage(valueNhaXe, valueBienSo, pageable);
         System.err.println(allPageCar);
         if (!allPageCar.hasContent()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -76,7 +87,7 @@ public class CarRestController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-   // ok
+    // ok
     @PatchMapping("/update-car/{id}")
     public ResponseEntity<?> updateCar(@RequestBody Xe XeValue) {
         XeValue.setStatus(1);

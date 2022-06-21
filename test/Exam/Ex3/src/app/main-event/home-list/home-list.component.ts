@@ -6,6 +6,8 @@ import {DiemDi} from '../../model/DiemDi';
 import {DiemDien} from '../../model/DiemDien';
 import {DiemDenService} from '../../service/diem-den.service';
 
+import {PageEvent} from '@angular/material/paginator';
+
 @Component({
   selector: 'app-home-list',
   templateUrl: './home-list.component.html',
@@ -13,6 +15,7 @@ import {DiemDenService} from '../../service/diem-den.service';
 })
 export class HomeListComponent implements OnInit {
   p: string | number = 1;
+  totalElements: number = 0;
 
   public xe: Xe[] = [];
   public diemDi: DiemDi[] = [];
@@ -26,19 +29,43 @@ export class HomeListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllXe();
+    this.getAllXe({page: '0', size: '5'});
 
   }
 
+  //
+  // getAllXe() {
+  //   this.seService.getAllAPIPage().subscribe(value => {
+  //     console.log(value);
+  //     // @ts-ignore
+  //     this.xe = value.content;
+  //     // @ts-ignore
+  //     this.totalElements = data['totalElements'];
+  //   }, error => {
+  //     console.log(error);
+  //   });
+  // }
 
-  getAllXe() {
-    this.seService.getAllAPIPage().subscribe(value => {
-      console.log(value);
-      // @ts-ignore
-      this.xe = value.content;
-    }, error => {
-      console.log(error);
-    });
+  private getAllXe(request) {
+    this.seService.getAllAPIPage()
+      .subscribe(data => {
+          console.log(data);
+          // @ts-ignore
+          this.xe = data.content;
+          // @ts-ignore
+          this.totalElements = data['totalElements'];
+        }
+        , error => {
+          console.log(error.error.message);
+        }
+      );
+  }
+
+  nextPage(event: PageEvent) {
+    const request = {};
+    request['page'] = event.pageIndex.toString();
+    request['size'] = event.pageSize.toString();
+    this.getAllXe(request);
   }
 
 
@@ -48,7 +75,6 @@ export class HomeListComponent implements OnInit {
 
   confirmDelete() {
     this.seService.deleteXe(this.xeDelete.id).subscribe(() => {
-      alert(' you deleted 1 Service');
       this.ngOnInit();
     }, e => {
       console.log(e);
