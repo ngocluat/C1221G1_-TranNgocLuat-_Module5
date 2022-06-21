@@ -42,10 +42,11 @@ export class XeService {
     return this.http.get<Xe>(`${(this.apiBaseUrl8080)}/api/car-id/${XeId}`);
   }
 
-
+  // spring    // ok
   updateXe(id: number, XeValue: Xe): Observable<Xe> {
+    console.log(' id update  là  ');
     console.log(id);
-    return this.http.patch<Xe>(`${(this.apiBaseUrl8080)}/api/update-car`, XeValue);
+    return this.http.patch<Xe>(`${(this.apiBaseUrl8080)}/api/update-car/${id}`, XeValue);
   }
 
 

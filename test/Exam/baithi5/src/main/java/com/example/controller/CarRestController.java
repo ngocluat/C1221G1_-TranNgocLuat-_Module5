@@ -76,16 +76,15 @@ public class CarRestController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-
+   // ok
     @PatchMapping("/update-car/{id}")
-    public ResponseEntity<?> updateCar(@PathVariable("id") Long id, @RequestBody Xe XeValue) {
+    public ResponseEntity<?> updateCar(@RequestBody Xe XeValue) {
         XeValue.setStatus(1);
-        System.err.println("UPDATE 54++4+4+94+4+4+4 ");
+        System.err.println("UPDATE 54++4+4+94+4+4+4");
         System.err.println(XeValue);
         iCarService.save(XeValue);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 
 }
 
