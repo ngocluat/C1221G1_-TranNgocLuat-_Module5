@@ -50,11 +50,11 @@
         <label class="col-md-4 control-label"> Rent Type</label>
         <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
-            <select name="" id="selsect" class="form-control">
+            <select name="" id="selsect" class="form-control" formControlName="rentType">
               <option value="">--- Rent Type---</option>
-              <option formControlName="rentType"> DAy</option>
-              <option formControlName="rentType"> Month</option>
-              <option formControlName="rentType"> Year</option>
+              <option > DAy</option>
+              <option> Month</option>
+              <option > Year</option>
             </select>
           </div>
           <div style="color: #ff0200">
@@ -213,8 +213,8 @@
         <div class="form-group">
           <label class="col-md-4 control-label"></label>
           <div class="col-md-4">
-            <button type="submit" class="btn btn-warning"
-                    [disabled]="!facilityForm.valid">
+            <button type="submit" class="btn btn-warning">
+
               Send
             </button>
           </div>

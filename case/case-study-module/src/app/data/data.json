@@ -292,27 +292,6 @@
       "id": 1
     },
     {
-      "serviceId": 2,
-      "serviceCode": "DV-0002",
-      "serviceName": "House Princess 01",
-      "serviceImage": "https://mmlive.one/wp-content/uploads/2022/03/MMlive-tong-hop-anh-gai-xinh-1.webp",
-      "serviceArea": 14000,
-      "serviceCost": 5000000,
-      "serviceMaxPeople": 7,
-      "standardRoom": "vip",
-      "descriptionOtherConvenience": "Có thêm bếp nướng",
-      "poolArea": 0,
-      "numberOfFloors": 3,
-      "freeAttachedService": "",
-      "rentType": {
-        "id": 2,
-        "name": "month"
-      },
-      "serviceTypeId": 2,
-      "active": 1,
-      "id": 2
-    },
-    {
       "id": 3,
       "serviceCode": "DV-0003",
       "serviceName": "Room Twin 01",
@@ -330,26 +309,6 @@
         "name": "hour"
       },
       "serviceTypeId": 3,
-      "active": 1
-    },
-    {
-      "id": 4,
-      "serviceCode": "DV-0004",
-      "serviceName": "Villa No Beach Front",
-      "serviceImage": "https://furamavietnam.com/wp-content/uploads/2020/04/04-Facilities-Maintenance.jpg",
-      "serviceArea": 22000,
-      "serviceCost": 9000000,
-      "serviceMaxPeople": 8,
-      "standardRoom": "normal",
-      "descriptionOtherConvenience": "Có hồ bơi",
-      "poolArea": 300,
-      "numberOfFloors": 3,
-      "freeAttachedService": "",
-      "rentType": {
-        "id": 3,
-        "name": "day"
-      },
-      "serviceTypeId": 1,
       "active": 1
     },
     {
@@ -392,6 +351,27 @@
       "serviceTypeId": "90000",
       "active": "",
       "id": 7
+    },
+    {
+      "serviceId": 8,
+      "serviceCode": "DV-987",
+      "serviceName": "House Princess 01",
+      "serviceImage": "https://images.pexels.com/photos/5245865/pexels-photo-5245865.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "serviceArea": "",
+      "serviceCost": "900000",
+      "serviceMaxPeople": "0",
+      "standardRoom": "Normal",
+      "descriptionOtherConvenience": "Có tivi",
+      "poolArea": "300",
+      "numberOfFloors": "0",
+      "freeAttachedService": "900000",
+      "rentType": {
+        "id": 3,
+        "name": "Day"
+      },
+      "serviceTypeId": "900000",
+      "active": "",
+      "id": 8
     }
   ],
   "contract": [

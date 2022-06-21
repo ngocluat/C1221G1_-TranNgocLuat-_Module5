@@ -1,3 +1,66 @@
 {
-
+  "DiemDi": [
+    {
+      "id": 1,
+      "diemdi": "Hà Nội"
+    },
+    {
+      "id": 2,
+      "diemdi": "Vinh"
+    },
+    {
+      "id": 3,
+      "diemdi": "Quảng Nam "
+    }
+  ],
+  "DiemDien": [
+    {
+      "id": 1,
+      "diemden": "Hà Nội"
+    },
+    {
+      "id": 2,
+      "diemden": "Vinh"
+    },
+    {
+      "id": 3,
+      "diemden": "Quảng Nam "
+    }
+  ],
+  "Xe": [
+    {
+      "id": 2,
+      "bienSoXe": "92-N1-19390",
+      "loaiXe": "Xe Nằm",
+      "tenNhaXe": "Quảng NAm ",
+      "diemDi": {
+        "id": 3,
+        "diemdi": "Quảng Nam "
+      },
+      "diemDien": {
+        "id": 3,
+        "diemden": "Quảng Nam "
+      },
+      "soDienThoaiNhaXe": "7686387628",
+      "email": "tanluat@gmail.com",
+      "gioKhoiHanh": "1h"
+    },
+    {
+      "id": 3,
+      "bienSoXe": "92-N1-78787",
+      "loaiXe": "Xe Nằm",
+      "tenNhaXe": "Quảng NAm ",
+      "diemDi": {
+        "id": 1,
+        "diemdi": "Hà Nội"
+      },
+      "diemDien": {
+        "id": 2,
+        "diemden": "Vinh"
+      },
+      "soDienThoaiNhaXe": "7686387628",
+      "email": "tanluat@gmail.com",
+      "gioKhoiHanh": "1h"
+    }
+  ]
 }

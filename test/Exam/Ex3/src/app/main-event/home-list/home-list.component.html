@@ -7,61 +7,46 @@
       </div>
       <input type="text" class="form-control" placeholder="Name Customer" id="name" #name>
       <input type="text" class="form-control" placeholder="Phone Customer " id="phone" #phone>
-
-<!--      <button class=" btn btn-outline-info" (click)="searching()"> Search</button>-->
+      <button class=" btn btn-outline-info"> Search</button>
     </div>
     <div class="col-lg-12">
-      <div class="d-flex justify-content-center my-5">
-        <h4 style="font-weight: bold"> KHÔNG CÓ KHÁCH HÀNG NÀO CẢ </h4>
-      </div>
       <table  class="table table-striped " style="clear: both">
         <tr style="background-color: #4671c5; color: white  ">
 
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
+          <th> Biển Số Xe</th>
+          <th>Loại Xe</th>
+          <th>Tên Nhà Xe</th>
+          <th> Điểm Đi</th>
+          <th> Điểm Đến</th>
+          <th>Số Điện THoại</th>
+          <th> Email</th>
+          <th> Giờ Khởi Hành</th>
           <th> Edit</th>
           <th>Delete</th>
-          <th>
-            <button type="submit" id="delete" class="btn btn-danger">
-              <i class="bi bi-recycle">Info</i>
-            </button>
-          </th>
         </tr>
+        <tr *ngFor="let item of xe |paginate : { itemsPerPage: 5, currentPage: p }; index as i">
+          <td>{{item.bienSoXe}}</td>
+          <td>{{item.loaiXe}}</td>
+          <td>{{item.tenNhaXe}}</td>
+          <td>{{item.diemDi.diemdi}}</td>
+          <td>{{item.diemDien.diemden}}</td>
+          <td>{{item.soDienThoaiNhaXe}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.gioKhoiHanh}}</td>
+          <td>
+            <button type="button" class="btn btn-warning"><a [routerLink]="['/edit', item.id]">
+              Edit </a></button>
+          </td>
+          <td>
+
+            <button type="button" class="btn btn-danger" data-toggle="modal" (click)="getXe(item)"
+                    data-target="#staticBackdrop">
+              Xóa
+            </button>
+          </td>
 
 
-<!--        <tr *ngFor="let item of customers |paginate : { itemsPerPage: 5, currentPage: p }; index as i">-->
-<!--          <td>{{item.id}}</td>-->
-<!--          <td>{{item.customerName}}</td>-->
-<!--          <td>{{item.customerBirthDay|date:"dd-MM-yyyy"}}</td>-->
-<!--          <td>-->
-<!--            <p class="badge badge-warning rounded-pill d-inline" *ngIf="item.customerGender== 0 "> Nữ</p>-->
-<!--            <p class="badge badge-success rounded-pill d-inline" *ngIf="item.customerGender== 1 "> Nam</p>-->
-<!--          </td>-->
-<!--          <td>{{item.customerPhone}}</td>-->
-<!--          <td>{{item.customerAddress}}</td>-->
-<!--          <td>{{item.customerType.name}}</td>-->
-<!--          <td>-->
-<!--            <button type="button" class="btn btn-warning"><a [routerLink]="['/customer/edit', item.id]">-->
-<!--              Edit </a></button>-->
-<!--          </td>-->
-<!--          <td>-->
-
-<!--            <button type="button" class="btn btn-danger" data-toggle="modal" (click)="getCustomer(item)"-->
-<!--                    data-target="#staticBackdrop">-->
-<!--              Xóa-->
-<!--            </button>-->
-<!--          </td>-->
-<!--          <td>-->
-<!--            <button type="button" class="btn btn-primary"-->
-<!--                    data-toggle="modal" data-target="#info" (click)="getCustomer(item)">-->
-<!--              Info-->
-<!--            </button>-->
-<!--          </td>-->
-
-<!--        </tr>-->
+        </tr>
       </table>
     </div>
   </div>
@@ -73,26 +58,26 @@
 
 <!-- modal delete -->
 
-<!--<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"-->
-<!--     aria-labelledby="staticBackdropLabel" aria-hidden="true">-->
-<!--  <div class="modal-dialog">-->
-<!--    <div class="modal-content">-->
-<!--      <div class="modal-header">-->
-<!--        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>-->
-<!--        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--          <span aria-hidden="true">&times;</span>-->
-<!--        </button>-->
-<!--      </div>-->
-<!--      <div class="modal-body">-->
-<!--        <p style="color: red"> you sure want delete all information of : {{customerDelete.customerName}}</p>-->
-<!--      </div>-->
-<!--      <div class="modal-footer">-->
-<!--        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
-<!--        <button type="button" (click)="confirmDelete()" class="btn btn-primary" data-dismiss="modal">Understood</button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="color: red"> you sure want delete all information of : {{xeDelete.bienSoXe}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" (click)="confirmDelete()" class="btn btn-primary" data-dismiss="modal">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!--// modal info  -->

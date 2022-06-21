@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HomeListComponent } from './home-list.component';
+import {HomeListComponent} from './home-list.component';
 
 describe('HomeListComponent', () => {
   let component: HomeListComponent;
@@ -8,9 +8,9 @@ describe('HomeListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeListComponent ]
+      declarations: [HomeListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

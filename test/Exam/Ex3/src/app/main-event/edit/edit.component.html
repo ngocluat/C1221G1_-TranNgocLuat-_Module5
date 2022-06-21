@@ -1,0 +1,136 @@
+<div class="container">
+  <form class="well form-horizontal" [formGroup]="carForm"
+        (ngSubmit)="updateFacility()" novalidate>
+    <fieldset>
+
+      <legend>Contact Us Today!</legend>
+      <div class="form-group">
+        <label class="col-md-4 control-label">Biển Số </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="phone" placeholder=" Biển Số    " class="form-control" formControlName="bienSoXe"
+                   type="text" disabled>
+          </div>
+          <div style="color: #ff0200">
+            <div *ngIf="carForm.controls.bienSoXe.hasError('required')
+					&& carForm.controls.bienSoXe.touched">
+              Biển Số Xe Đang Trống !!
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Loại xe </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="phone" placeholder="Loại xe " class="form-control" formControlName="loaiXe"
+                   type="text">
+          </div>
+          <div style="color: #ff0200">
+            <div *ngIf="carForm.controls.loaiXe.hasError('required')
+					&& carForm.controls.loaiXe.touched">
+              Biển Số Xe Đang Trống !!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label">Tên Nhà Xe </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input name="phone" placeholder="Tên Nhà Xe  " class="form-control" formControlName="tenNhaXe"
+                   type="url">
+          </div>
+          <div style="color: #ff0200">
+            <div *ngIf="carForm.controls.tenNhaXe.hasError('required')
+					&& carForm.controls.tenNhaXe.touched">
+              Tên Nhà Xe Đang Trống !!
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Điểm Đi </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <select class="form-control" formControlName="diemDi"    [compareWith]="compareWithId">
+              <option *ngFor=" let di of diemDis" [ngValue]="di">{{di.diemdi}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Điểm Đến </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <select class="form-control" formControlName="diemDien"   [compareWith]="compareWithId">
+
+              <option *ngFor=" let den of diemDiens" [ngValue]="den">
+                {{den.diemden}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">số Điện Thoại </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <input name="website" placeholder="số Điện Thoại "
+                   class="form-control" formControlName="soDienThoaiNhaXe"
+                   type="text">
+          </div>
+          <span *ngIf="carForm.controls.soDienThoaiNhaXe.hasError('pattern')"> Số điện thoại không đúng định dạng </span>
+          <span *ngIf="carForm.controls.soDienThoaiNhaXe.hasError('required')"> Số điện thoại không được để trống</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label"> email </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <input name="website" placeholder="email "
+                   class="form-control" formControlName="email"
+                   type="text">
+          </div>
+          <span *ngIf="carForm.controls.email.hasError('email')"> email không đúng định dạng </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label"> Giờ Khỏi hành </label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+            <input name="website" placeholder="Giờ Khỏi hành "
+                   class="form-control" formControlName="gioKhoiHanh"
+                   type="text">
+          </div>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <div class="form-group">
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-warning">Send <span
+            class="glyphicon glyphicon-send"></span></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

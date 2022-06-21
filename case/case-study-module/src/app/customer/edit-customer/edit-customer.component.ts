@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../CustomerService";
@@ -10,9 +10,10 @@ import {CustomerTypeSevice} from "../CustomerTypeSevice";
   templateUrl: './edit-customer.component.html',
   styleUrls: ['./edit-customer.component.css']
 })
-export class EditCustomerComponent implements OnInit {
+export class EditCustomerComponent implements OnInit, OnDestroy {
 
   id: number;
+
 
   constructor(private  customerService: CustomerService,
               private router: Router,
@@ -101,7 +102,6 @@ export class EditCustomerComponent implements OnInit {
       customerValue.id = this.id;
       console.log(customerValue)
       this.customerService.updateCustomer(this.id, customerValue).subscribe(() => {
-        this.router.navigate(['/customer/list'])
         this.router.navigate(['/customer/home'])
         alert('Cập nhật thành công');
       }, e => {
@@ -109,5 +109,8 @@ export class EditCustomerComponent implements OnInit {
       });
     }
 
+  }
+
+  ngOnDestroy(): void {
   }
 }

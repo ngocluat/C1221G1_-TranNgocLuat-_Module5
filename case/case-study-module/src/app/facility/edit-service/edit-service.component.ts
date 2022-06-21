@@ -21,13 +21,15 @@ export class EditServiceComponent implements OnInit {
   facilityForm: FormGroup;
   facility = {} as Facility;
   rentTypeList = rentTypeList;
-  id: number;
+    id: number;
 
+  // lấy giá trị từ cpn để gán lại cho view khi edit
   checkItemRent(item1, item2) {
     return item1 && item2 && item1.id == item2.id;
   };
 
   ngOnInit(): void {
+    // lấy id
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
       console.log(this.id);
@@ -69,7 +71,6 @@ export class EditServiceComponent implements OnInit {
       console.log(e)
     }, () => {
       this.router.navigate(['/facility/home'])
-
     });
 
 

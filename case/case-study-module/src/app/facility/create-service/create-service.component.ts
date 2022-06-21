@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {FacilityService} from "../FacilityService";
 import {Router} from "@angular/router";
 
@@ -25,9 +25,9 @@ export class CreateServiceComponent implements OnInit {
     numberOfFloors: new FormControl("", Validators.required),
     freeAttachedService: new FormControl("", Validators.required),
     rentType: new FormControl(""),
-    serviceTypeId: new FormControl("", Validators.required),
+    serviceTypeId: new FormControl(""),
     active: new FormControl("")
-  }, [this.priceCustomValid]);
+  });
 
   constructor(private  facilityService: FacilityService, private  route: Router) {
   }
@@ -36,23 +36,15 @@ export class CreateServiceComponent implements OnInit {
   }
 
   submit() {
-    if (this.facilityForm.valid){
-      const facility = this.facilityForm.value;
-      this.facilityService.saveFacility(facility).subscribe(() => {
-        this.facilityForm.reset();
-        this.route.navigate(['/facility/home'])
-        alert('Tạo thành công');
-      }, e => {
-        console.log(e);
-      });
-    }
 
+    const facility = this.facilityForm.value;
+    this.facilityService.saveFacility(facility).subscribe(() => {
+      this.facilityForm.reset();
+      this.route.navigate(['/facility/home'])
+      alert('Tạo thành công');
+    }, e => {
+      console.log(e);
+    });
   }
 
-  priceCustomValid(serviceCost: AbstractControl) {
-    let priceValid = serviceCost.value
-    if (priceValid < 0) {
-      return {'price0': true}
-    }
-  }
 }
