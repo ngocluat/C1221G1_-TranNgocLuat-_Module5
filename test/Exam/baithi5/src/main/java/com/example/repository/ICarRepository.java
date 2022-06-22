@@ -16,9 +16,14 @@ public interface ICarRepository extends JpaRepository<Xe, Long> {
     @Query(value = "UPDATE car_manager.xe SET `status` = 0 WHERE id = :id", nativeQuery = true)
     void removeCar(@Param("id") Long id);
 
+//
+//    @Query(value = "select * from   car_manager.xe where ( ten_nha_xe like :tenNhaXe or  bien_so_xe like :bienSoXe ) and `status` = 1",
+//            countQuery = "select * from   car_manager.xe where ( ten_nha_xe like :tenNhaXe or  bien_so_xe like :bienSoXe ) and `status` = 1",
+//            nativeQuery = true)
+//    Page<Xe> getAllCar(@Param("tenNhaXe") String tenNhaXe, @Param("bienSoXe") String bienSoXe, Pageable pageable);
 
-    @Query(value = "select * from   car_manager.xe where ( ten_nha_xe like :tenNhaXe or  bien_so_xe like :bienSoXe ) and `status` = 1",
-            countQuery = "select * from   car_manager.xe where ( ten_nha_xe like :tenNhaXe or  bien_so_xe like :bienSoXe ) and `status` = 1",
-            nativeQuery = true)
-    Page<Xe> getAllCar(@Param("tenNhaXe") String tenNhaXe, @Param("bienSoXe") String bienSoXe, Pageable pageable);
+
+     Page<Xe> findAllByBienSoXeContainingAndTenNhaXeContainingAndStatus(String bienSoXe , String tenNhaXe, Integer status , Pageable pageable );
+
+
 }

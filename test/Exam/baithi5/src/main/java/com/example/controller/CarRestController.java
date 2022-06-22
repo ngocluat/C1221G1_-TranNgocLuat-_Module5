@@ -33,18 +33,21 @@ public class CarRestController {
 
 
     // ok
-    // em phân trang rồi mà nó lạ lắm 
+
     @GetMapping("page-car")
     public ResponseEntity<Page<Xe>> getPageCar(@RequestParam Optional<String> bienSoXe,
                                                @RequestParam Optional<String> tenNhaXe,
                                                @RequestParam(defaultValue = "0") int page,
-                                               @RequestParam(defaultValue = "5") int size) {
+                                               @RequestParam(defaultValue = "20") int size) {
 
         Pageable pageable = PageRequest.of(page, size);
         String valueNhaXe = tenNhaXe.orElse("");
         String valueBienSo = bienSoXe.orElse("");
-        Page<Xe> allPageCar = iCarService.findAllPage(valueNhaXe, valueBienSo, pageable);
-        System.err.println(allPageCar);
+        Page<Xe> allPageCar = iCarService.findAllPage(valueBienSo, valueNhaXe, pageable);
+        System.err.println("sghsbh");
+        System.err.println(valueNhaXe);
+        System.err.println(valueBienSo);
+
         if (!allPageCar.hasContent()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -92,7 +95,7 @@ public class CarRestController {
     public ResponseEntity<?> updateCar(@RequestBody Xe XeValue) {
         XeValue.setStatus(1);
         System.err.println("UPDATE 54++4+4+94+4+4+4");
-        System.err.println(XeValue);
+        System.err.println(XeValue.getStatus());
         iCarService.save(XeValue);
         return new ResponseEntity<>(HttpStatus.OK);
     }

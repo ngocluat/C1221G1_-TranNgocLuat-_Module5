@@ -48,8 +48,13 @@
                 <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="#">Dịch Vụ  </a>
                   <ul class="dropdown">
-                    <li><a [routerLink]="['list']"> Bến Xe  </a></li>
+                    <li><a [routerLink]="['list']"> Bến Xe </a></li>
                     <li><a [routerLink]="['create']">Thêm Mới</a></li>
+                    <li>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                        Launch demo modal
+                      </button>
+                    </li>
                   </ul>
                 </li>
                 <li><a href="https://www.facebook.com/luat.tranngoc.94">Author</a>
@@ -68,6 +73,168 @@
         </div>
       </div>
     </div>
+  </div>  
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <form class="well form-horizontal" [formGroup]="carForm"
+                  (ngSubmit)="createCar()" novalidate>
+              <fieldset>
+
+                <legend>Contact Us Today!</legend>
+                <div class="form-group">
+                  <label class=" control-label">Biển Số </label>
+                  <div class=" inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="phone" placeholder=" Biển Số" class="form-control" formControlName="bienSoXe"
+                             type="text">
+                    </div>
+                    <div style="color: #ff0200">
+                      <div *ngIf="carForm.controls.bienSoXe.hasError('required')
+					&& carForm.controls.bienSoXe.touched">
+                        Biển Số Xe Đang Trống !!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class=" control-label">Loại xe </label>
+                  <div class=" inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="phone" placeholder="Loại xe " class="form-control" formControlName="loaiXe"
+                             type="text">
+                    </div>
+                    <div style="color: #ff0200">
+                      <div *ngIf="carForm.controls.loaiXe.hasError('required')
+					&& carForm.controls.loaiXe.touched">
+                        Loại Xe Xe Đang Trống !!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class=" control-label">Tên Nhà Xe </label>
+                  <div class=" inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="phone" placeholder="Tên Nhà Xe  " class="form-control" formControlName="tenNhaXe"
+                             type="url">
+                    </div>
+                    <div style="color: #ff0200">
+                      <div *ngIf="carForm.controls.tenNhaXe.hasError('required')
+					&& carForm.controls.tenNhaXe.touched">
+                        Tên Nhà Xe Đang Trống !!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class=" control-label">Điểm Đi </label>
+                  <div class=" inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                      <select class="form-control" formControlName="diemDi">
+                        <option *ngFor=" let di of diemDi" [ngValue]="di">{{di.diemdi}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class=" control-label">Điểm Đến </label>
+                  <div class=" inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                      <select class="form-control" formControlName="diemDien">
+
+                        <option *ngFor=" let den of diemDen" [ngValue]="den">
+                          {{den.diemden}}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class=" control-label">số Điện Thoại </label>
+                  <div class=" inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                      <input name="website" placeholder="số Điện Thoại "
+                             class="form-control" formControlName="soDienThoaiNhaXe"
+                             type="text">
+                    </div>
+                    <span style=" color: red" *ngIf="carForm.controls.soDienThoaiNhaXe.hasError('pattern')"> Số điện thoại không đúng định dạng </span>
+                    <span style=" color: red" *ngIf="carForm.controls.soDienThoaiNhaXe.hasError('required')"> Số điện thoại không được để trống</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class=" control-label"> email </label>
+                  <div class=" inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                      <input name="website" placeholder="email "
+                             class="form-control" formControlName="email"
+                             type="text">
+                    </div>
+                    <span style=" color: red" *ngIf="carForm.controls.email.hasError('email')"> email không đúng định dạng </span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class=" control-label"> Giờ Khỏi hành </label>
+                  <div class=" inputGroupContainer">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                      <input name="website" placeholder="Giờ Khỏi hành "
+                             class="form-control" formControlName="gioKhoiHanh"
+                             type="time">
+                    </div>
+                    <span style=" color: red" *ngIf="carForm.controls.gioKhoiHanh.hasError('required')"> Giờ Khỏi Hành Không Được Để Trống </span>
+                  </div>
+                </div>
+
+              </fieldset>
+
+              <div class="form-group">
+                <div class="form-group">
+                  <label class=" control-label"></label>
+                  <div class="">
+                    <button type="submit" class="btn btn-warning">Send <span
+                      class="glyphicon glyphicon-send"></span></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- end Modal -->
+
+
 </header>
 

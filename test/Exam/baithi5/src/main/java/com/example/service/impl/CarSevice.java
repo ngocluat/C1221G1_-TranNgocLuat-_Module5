@@ -43,7 +43,7 @@ public class CarSevice implements ICarService {
     }
 
     @Override
-    public Page<Xe> findAllPage(String tenNhaXe, String bienSoXe, Pageable pageable) {
-        return iCarRepository.getAllCar('%' + tenNhaXe + '%', '%' + bienSoXe + '%', pageable);
+    public Page<Xe> findAllPage(String bienSoXe, String tenNhaXe, Pageable pageable) {
+        return iCarRepository.findAllByBienSoXeContainingAndTenNhaXeContainingAndStatus(bienSoXe, tenNhaXe, 1, pageable);
     }
 }

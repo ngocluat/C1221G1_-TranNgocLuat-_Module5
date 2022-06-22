@@ -21,9 +21,9 @@ export class XeService {
     return this.http.get<Xe[]>(this.apiBaseUrl8080 + '/api/list-car');
   }
 
-  // spring     // ok
-  getAllAPIPage(): Observable<Xe[]> {
-    return this.http.get<Xe[]>(this.apiBaseUrl8080 + '/api/page-car');
+  // spring
+  getAllAPIPage(bienSoXe: string, tenNhaXe: string): Observable<Xe[]> {
+    return this.http.get<Xe[]>(`http://localhost:8080/api/page-car?bienSoXe=${bienSoXe}&tenNhaXe=${tenNhaXe}`);
   }
 
   // spring    // ok
