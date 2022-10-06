@@ -3,14 +3,15 @@
         (ngSubmit)="createCar()" novalidate>
     <fieldset>
 
-      <legend>Contact Us Today!</legend>
+      <legend>Contact Us Today !</legend>
       <div class="form-group">
         <label class="col-md-4 control-label">Biển Số </label>
         <div class="col-md-4 inputGroupContainer">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-            <input name="phone" placeholder=" Biển Số    " class="form-control" formControlName="bienSoXe"
-                   type="text">
+            <input name="phone" placeholder=" Biển Số " class="form-control" formControlName="bienSoXe"
+                   (change)="showPreview($event)"
+                   type="file">
           </div>
           <div style="color: #ff0200">
             <div *ngIf="carForm.controls.bienSoXe.hasError('required')

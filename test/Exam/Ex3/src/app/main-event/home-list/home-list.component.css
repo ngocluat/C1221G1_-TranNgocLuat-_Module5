@@ -1,0 +1,18 @@
+.class_name{ background-color: yellow; }
+.custom-venue tr:hover {
+  cursor: pointer;
+  background: #ffc846;
+  font-weight: bold;
+}
+
+.custom-venue td:focus {
+  outline: none;
+  background: #34ce57;
+  font-weight: bold;
+}
+
+
+.custom-venue{
+
+}
+

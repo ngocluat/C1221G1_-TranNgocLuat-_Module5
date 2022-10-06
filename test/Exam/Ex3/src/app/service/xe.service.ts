@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Xe} from '../model/Xe';
+import {Page} from 'ngx-pagination/dist/pagination-controls.directive';
 
 @Injectable({
   providedIn: 'root'
@@ -38,9 +39,9 @@ export class XeService {
   }
 
   // spring    // ok
-  findById(XeId: number): Observable<Xe> {
-    return this.http.get<Xe>(`${(this.apiBaseUrl8080)}/api/car-id/${XeId}`);
-  }
+    findById(XeId: number): Observable<Xe> {
+      return this.http.get<Xe>(`${(this.apiBaseUrl8080)}/api/car-id/${XeId}`);
+    }
 
   // spring    // ok
   updateXe(id: number, XeValue: Xe): Observable<Xe> {
@@ -50,4 +51,8 @@ export class XeService {
   }
 
 
+  public getAll(request): Observable<any> {
+    const params = request;
+    return this.http.get<Page>(`${this.apiBaseUrl8080}/api/page-car`, {params});
+  }
 }

@@ -12,6 +12,7 @@ const routes: Routes = [
 
 
   {path: 'error', component: ErrorComponent},
+
   {
     path: 'customer',
     loadChildren: () => import('./customer/customer.module').then(module => module.CustomerModule)

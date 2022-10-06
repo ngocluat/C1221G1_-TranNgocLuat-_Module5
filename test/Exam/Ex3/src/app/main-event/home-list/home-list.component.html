@@ -5,17 +5,25 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id=""> Tìm Kiếm </span>
       </div>
-      <form  [formGroup]="carForm"
-             (ngSubmit)="getAllXe()">
-      <input type="text" class="form-control" placeholder="Biển Số Xe " formControlName="bienSoXe" >
-      <input type="text" class="form-control" placeholder="Tên Nhà Xe  " formControlName="tenNhaXe"  >
-      <button  type="submit" class=" btn btn-outline-info"> Search</button>
+      <form [formGroup]="carForm"
+            (ngSubmit)="search()">
+
+        <select name="search">
+          <option value="bienSoXe"> Biên Số Xe</option>
+          <option value="tenNhaXe"> Tên Nhà Xe</option>
+        </select>
+        <input type="text">
+        <!--        <input type="text" class="form-control" placeholder="Biển Số Xe" formControlName="bienSoXe">-->
+        <!--        <input type="text" class="form-control" placeholder="Tên Nhà Xe" formControlName="tenNhaXe">-->
+        <button type="submit" class=" btn btn-outline-info"> Search</button>
       </form>
     </div>
-    <div class="col-lg-12">
-      <table  class="table table-striped " style="clear: both">
-        <tr style="background-color: #4671c5; color: white  ">
 
+
+    <div class="col-lg-12 ">
+      <table class="table table-striped custom-venue" style="clear: both">
+        <tr style="background-color: #4671c5; color: white  ">
+          <th> Click</th>
           <th> Biển Số Xe</th>
           <th>Loại Xe</th>
           <th>Tên Nhà Xe</th>
@@ -27,8 +35,9 @@
           <th> Edit</th>
           <th>Delete</th>
         </tr>
-        <!--        |paginate : { itemsPerPage: 5, currentPage: p }; index as i -->
-        <tr *ngFor="let item of xe ">
+        <!-- (click)="selectCompany($event, item)" [ngClass]="{'class_name': item.id === currentCompany -->
+        <tr class="" *ngFor="let item of xe " (click)="getXe(item)">
+          <td (click)="handleClickEvent()">Handle Click</td>
           <td>{{item.bienSoXe}}</td>
           <td>{{item.loaiXe}}</td>
           <td>{{item.tenNhaXe}}</td>
@@ -38,15 +47,16 @@
           <td>{{item.email}}</td>
           <td>{{item.gioKhoiHanh}}</td>
           <td>
-            <button type="button" class="btn btn-warning"><a [routerLink]="['/edit', item.id]">
-              Edit </a></button>
+            <!--            <button type="button" class="btn btn-warning"><a [routerLink]="['/edit', item.id]">-->
+            Edit
+            <!--            </a></button>-->
           </td>
-          <td>
 
-            <button type="button" class="btn btn-danger" data-toggle="modal" (click)="getXe(item)"
-                    data-target="#staticBackdrop">
-              Xóa
-            </button>
+          <td>
+            <!--            <button type="button" class="btn btn-danger" data-toggle="modal" (click)="getXe(item)"-->
+            <!--                    data-target="#staticBackdrop">-->
+            Xóa
+            <!--            </button>-->
           </td>
 
 
@@ -61,6 +71,33 @@
 <!--  <pagination-controls (pageChange)="p = $event" class=" page-item"></pagination-controls>-->
 <!--</div>-->
 
+<button type="button" class="btn btn-danger" data-toggle="modal"
+        data-target="#staticBackdrop">
+  Xóa
+</button>
+
+<button type="button" class="btn btn-warning"><a [routerLink]="['/edit', xeDelete.id]">
+  Edit
+</a></button>
+
+<!-- phân trang be   -->
+<nav class="blog-pagination d-flex justify-content-center py-3">
+  <ul class="pagination">
+    <li class="page-item px-1">
+      <a (click)="previousPage()" [class.disabled]="currentPage<=0" class="page-link">Previous</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link">
+        <span>{{currentPage + 1}}</span>
+        <span>/</span>
+        <span>{{totalPages}}</span>
+      </a>
+    </li>
+    <li class="page-item px-1">
+      <a class="page-link" (click)="nextPage()" [class.disabled]="currentPage+1>=totalPages">Next</a>
+    </li>
+  </ul>
+</nav>
 
 <!-- modal delete -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
